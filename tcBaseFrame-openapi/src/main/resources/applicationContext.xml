@@ -11,7 +11,7 @@
 	<bean id="posDataServiceMap" class="java.util.HashMap">
 		<constructor-arg>
 			<map>
-				<entry key="dearbinge.parkingbasicdata.sync">
+				<entry key="tentcoo.parkingbasicdata.sync">
 					<bean class="com.tentcoo.openapi.service.impl.ParkingBasicDataSync"></bean>
 				</entry>
 			</map>

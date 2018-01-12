@@ -4,9 +4,9 @@
 项目介绍：
 
 1、首先安装zookeeper+redis；
-2、dearbinge-data-provider服务提供者项目的资源文件dubbo-spring-mybatis.xml下配置zookeeper地址；
-3、dearbinge-openapi服务消费者的资源文件dubbo-services.xml下配置zookeeper地址，然后在application.properties下配置redis地址；
-4、dearbinge-security服务消费者的资源文件dubbo-services.xml下配置zookeeper地址；
+2、tcBaseFrame-data-provider服务提供者项目的资源文件dubbo-spring-mybatis.xml下配置zookeeper地址；
+3、tcBaseFrame-openapi服务消费者的资源文件dubbo-services.xml下配置zookeeper地址，然后在application.properties下配置redis地址；
+4、tcBaseFrame-security服务消费者的资源文件dubbo-services.xml下配置zookeeper地址；
 5、建立数据库文件cloudplate，创建`t_security`表单元素
 
 脚本如下：
@@ -36,7 +36,7 @@ CREATE TABLE `t_security` (
 INSERT INTO `t_security` VALUES ('0eca8f5373ca4866aec2f8e9d9367104', '14318527b13840c2a4af63fef52c2d6e', '323202320202201509080001', '1', '1', null, null, null, null, '测试');
 
 6、启动zookeeper、redis；
-7、启动dearbinge-data-provider项目下的MainLoader注册服务提供者；
-8、启动dearbinge-openapi项目下的App4OpenApi注册服务消费者；
-9、启动dearbinge-client-test项目下的App4Client类文件的Main方法;
+7、启动tcBaseFrame-data-provider项目下的MainLoader注册服务提供者；
+8、启动tcBaseFrame-openapi项目下的App4OpenApi注册服务消费者；
+9、启动tcBaseFrame-client-test项目下的App4Client类文件的Main方法;
 10、整个项目即可完整运行。

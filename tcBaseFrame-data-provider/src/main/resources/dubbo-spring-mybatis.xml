@@ -7,7 +7,7 @@
 	http://code.alibabatech.com/schema/dubbo         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 	<!-- 提供方应用信息，用于计算依赖关系 -->
-	<dubbo:application name="dearbinge-parkingspot-provider" />
+	<dubbo:application name="tcBaseFrame-parkingspot-provider" />
 
 	<!-- 使用multicast广播注册中心暴露服务地址 -->
 	<dubbo:registry protocol="zookeeper" address="localhost:2181" />
@@ -18,10 +18,10 @@
 	<import resource="spring-mybatis.xml" />
 
 	<!-- 使用注解方式暴露接口 -->
-	<!-- <dubbo:annotation package="com.dearbinge.data" /> -->
+	<!-- <dubbo:annotation package="com.tentcoo.data" /> -->
 
 	<!-- 加入spring注解扫描 -->
-	<context:component-scan base-package="com.dearbinge.data" />
+	<context:component-scan base-package="com.tentcoo.data" />
 
 	<!-- xml 配置文件， 对外发布的service接口部分 -->
 	<import resource="dubbo-services.xml" />

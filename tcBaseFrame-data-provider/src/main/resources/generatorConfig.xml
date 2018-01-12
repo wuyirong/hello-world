@@ -14,19 +14,19 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.dearbinge.data.pojo"
+		<javaModelGenerator targetPackage="com.tentcoo.data.pojo"
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		<!-- 生成映射文件的包名和位置 -->
-		<sqlMapGenerator targetPackage="com.dearbinge.data.mapping"
+		<sqlMapGenerator targetPackage="com.tentcoo.data.mapping"
 			targetProject="src/main/resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!-- 生成DAO的包名和位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.dearbinge.data.dao" targetProject="src/main/java">
+			targetPackage="com.tentcoo.data.dao" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名 -->

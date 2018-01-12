@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>dearbinge-data-api</name>
+	<name>tcBaseFrame-data-api</name>
 	<comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
 	<projects>
-		<project>dearbinge-data-domain</project>
+		<project>tcBaseFrame-data-domain</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

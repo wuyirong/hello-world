@@ -32,7 +32,7 @@ public class App4Client {
 		List<NameValuePair> listPair = new ArrayList<NameValuePair>();
 		// 填入各个表单域的值
 		listPair.add(new BasicNameValuePair("secret_key", "0eca8f5373ca4866aec2f8e9d9367104"));
-		listPair.add(new BasicNameValuePair("method", "dearbinge.parkingbasicdata.sync"));
+		listPair.add(new BasicNameValuePair("method", "tentcoo.parkingbasicdata.sync"));
 		httpPost.setEntity(new UrlEncodedFormEntity(listPair));
 		UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(listPair, "UTF-8");
 		httpPost.setEntity(formEntity);

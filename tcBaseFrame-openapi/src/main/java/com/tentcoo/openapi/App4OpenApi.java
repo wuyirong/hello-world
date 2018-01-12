@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @ImportResource({ "classpath:applicationContext.xml", "dubbo-services.xml" })
 @EnableAutoConfiguration
-//@ComponentScan("com.dearbinge.controller")
+//@ComponentScan("com.tentcoo.controller")
 public class App4OpenApi extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
