@@ -5,11 +5,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.zte-its</groupId>
-		<artifactId>dearbinge-parent</artifactId>
+		<artifactId>tcBaseFrame-parent</artifactId>
 		<version>1.0.0.0</version>
 	</parent>
-	<artifactId>dearbinge-utils</artifactId>
+	<artifactId>tcBaseFrame-data-domain</artifactId>
 	<dependencies>
+		<dependency>
+			<groupId>com.zte-its</groupId>
+			<artifactId>tcBaseFrame-utils</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
