@@ -12,7 +12,7 @@
 		<constructor-arg>
 			<map>
 				<entry key="dearbinge.parkingbasicdata.sync">
-					<bean class="com.dearbinge.openapi.service.impl.ParkingBasicDataSync"></bean>
+					<bean class="com.tentcoo.openapi.service.impl.ParkingBasicDataSync"></bean>
 				</entry>
 			</map>
 		</constructor-arg>
