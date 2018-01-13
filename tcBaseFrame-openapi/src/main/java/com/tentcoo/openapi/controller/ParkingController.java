@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 //import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 //import org.springframework.context.annotation.ImportResource;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.tentcoo.data.api.AnnotationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tentcoo.data.api.SecurityService;
 import com.tentcoo.openapi.service.InfrastructDeal;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 //@ImportResource({ "classpath:applicationContext.xml", "dubbo-services.xml" })
@@ -28,6 +31,9 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 	private Map<String, InfrastructDeal> posDataServiceMap;
 	@Resource
 	private SecurityService securityService;
+
+	@Reference//(version="1.0")
+	private AnnotationService annotationService;
 
 	@RequestMapping(value = "/getSession", method = RequestMethod.GET)
 	public void getSession(HttpServletRequest request, HttpServletResponse response) {
@@ -85,6 +91,21 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 		} catch (Exception ex) {
 			throw ex;
 		}
+	}
+
+	@RequestMapping(value = "/getAnnService", method = RequestMethod.POST)
+	@ResponseBody
+	public String getAnnService(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String secretKey = request.getParameter("secret_key");
+		try {
+			//InfrastructDeal ideal = posDataServiceMap.get(method);
+			String responseResult = annotationService.getNameByKey(secretKey);
+			//System.out.println("res="+responseResult);
+			return responseResult;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return "{success:false,message:'exception'}";
 	}
 
 }

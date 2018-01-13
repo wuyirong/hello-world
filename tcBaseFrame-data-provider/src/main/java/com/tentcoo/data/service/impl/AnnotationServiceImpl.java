@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Created by rover on 2018/1/13.
  */
 @Component("providerAnnService")
-@Service(version="1.0")
+@Service//(version="1.0")
 public class AnnotationServiceImpl implements AnnotationService {
 
     @Override

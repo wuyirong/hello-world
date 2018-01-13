@@ -26,6 +26,11 @@ public class App4Client {
 
 	public static void main(String[] args) throws IOException {
 
+		test2();
+	}
+
+	public static void test1() throws IOException {
+
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		String apiUrl = "http://localhost:8082/syncParkingBasicData";
 		HttpPost httpPost = new HttpPost(apiUrl);
@@ -33,6 +38,36 @@ public class App4Client {
 		// 填入各个表单域的值
 		listPair.add(new BasicNameValuePair("secret_key", "0eca8f5373ca4866aec2f8e9d9367104"));
 		listPair.add(new BasicNameValuePair("method", "tentcoo.parkingbasicdata.sync"));
+		httpPost.setEntity(new UrlEncodedFormEntity(listPair));
+		UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(listPair, "UTF-8");
+		httpPost.setEntity(formEntity);
+		CloseableHttpResponse response = httpclient.execute(httpPost);
+		try {
+			System.out.println("status="+response.getStatusLine());
+			HttpEntity entity = response.getEntity();
+			// do something useful with the response body
+			// and ensure it is fully consumed
+			String result = EntityUtils.toString(entity, "UTF-8");
+			System.out.println("result="+result);
+			JsonNode jsonNode = JsonUtil.getJsonNodeByKey(result, Constants.ERROR_RESPONSE);
+			if (jsonNode != null) {
+				System.out.println(jsonNode.toString());
+			}
+			EntityUtils.consume(entity);
+		} finally {
+			response.close();
+		}
+	}
+
+	public static void test2() throws IOException {
+
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		String apiUrl = "http://localhost:8082/getAnnService";
+		HttpPost httpPost = new HttpPost(apiUrl);
+		List<NameValuePair> listPair = new ArrayList<NameValuePair>();
+		// 填入各个表单域的值
+		listPair.add(new BasicNameValuePair("secret_key", "0eca8f5373ca4866aec2f8e9d9367104"));
+//		listPair.add(new BasicNameValuePair("method", "tentcoo.parkingbasicdata.sync"));
 		httpPost.setEntity(new UrlEncodedFormEntity(listPair));
 		UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(listPair, "UTF-8");
 		httpPost.setEntity(formEntity);
