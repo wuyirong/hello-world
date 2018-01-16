@@ -53,6 +53,7 @@
     <orderEntry type="module" module-name="tcBaseFrame-log" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.10" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.36" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:dubbo:2.5.8" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.3.10.RELEASE" level="project" />

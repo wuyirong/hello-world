@@ -16,6 +16,9 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.3" level="project" />
+    <orderEntry type="module" module-name="tcBaseFrame-log" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.10" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:dubbo:2.5.8" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.3.10.RELEASE" level="project" />
@@ -53,7 +56,7 @@
     <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.0.30" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.30" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.29" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.36" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
   </component>
 </module>

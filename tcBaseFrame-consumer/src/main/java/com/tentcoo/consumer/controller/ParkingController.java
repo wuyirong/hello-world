@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 //import org.springframework.context.annotation.ImportResource;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.tentcoo.data.api.AnnotationService;
+import com.tentcoo.log.annotation.LogAnnotation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -95,6 +96,7 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 
 	@RequestMapping(value = "/getAnnService", method = RequestMethod.POST)
 	@ResponseBody
+	@LogAnnotation(value="##########调用注解接口.")
 	public String getAnnService(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String secretKey = request.getParameter("secret_key");
 		try {

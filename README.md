@@ -5,7 +5,7 @@
 
 1、首先安装zookeeper+redis；
 2、tcBaseFrame-data-provider服务提供者项目的资源文件dubbo-spring-mybatis.xml下配置zookeeper地址；
-3、tcBaseFrame-openapi服务消费者的资源文件dubbo-services.xml下配置zookeeper地址，然后在application.properties下配置redis地址；
+3、tcBaseFrame-consumer服务消费者的资源文件dubbo-services.xml下配置zookeeper地址，然后在application.properties下配置redis地址；
 4、tcBaseFrame-security服务消费者的资源文件dubbo-services.xml下配置zookeeper地址；
 5、建立数据库文件cloudplate，创建`t_security`表单元素
 
@@ -37,6 +37,6 @@ INSERT INTO `t_security` VALUES ('0eca8f5373ca4866aec2f8e9d9367104', '14318527b1
 
 6、启动zookeeper、redis；
 7、启动tcBaseFrame-data-provider项目下的MainLoader注册服务提供者；
-8、启动tcBaseFrame-openapi项目下的App4OpenApi注册服务消费者；
+8、启动tcBaseFrame-consumer项目下的App4Consumer注册服务消费者；
 9、启动tcBaseFrame-client-test项目下的App4Client类文件的Main方法;
 10、整个项目即可完整运行。

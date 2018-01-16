@@ -13,8 +13,8 @@
 		<artifactId>tcBaseFrame-parent</artifactId>
 		<version>1.0.0.0</version>
 	</parent>
-	<artifactId>tcBaseFrame-openapi</artifactId>
-	<name>tcBaseFrame-openapi</name>
+	<artifactId>tcBaseFrame-consumer</artifactId>
+	<name>tcBaseFrame-consumer</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>

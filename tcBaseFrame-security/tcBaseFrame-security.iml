@@ -25,6 +25,10 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.0.30" level="project" />
     <orderEntry type="module" module-name="tcBaseFrame-data-api" />
     <orderEntry type="module" module-name="tcBaseFrame-data-domain" />
+    <orderEntry type="module" module-name="tcBaseFrame-log" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.10" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.36" level="project" />
     <orderEntry type="module" module-name="tcBaseFrame-utils" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.3" level="project" />

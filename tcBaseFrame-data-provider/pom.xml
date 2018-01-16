@@ -11,7 +11,6 @@
 	<artifactId>tcBaseFrame-data-provider</artifactId>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring-boot-version>1.4.7.RELEASE</spring-boot-version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -131,7 +130,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.29</version>
+			<version>${fastjson.version}</version>
 		</dependency>
 
 	</dependencies>
