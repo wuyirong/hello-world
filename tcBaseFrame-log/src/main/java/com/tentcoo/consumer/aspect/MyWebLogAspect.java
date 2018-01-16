@@ -6,11 +6,13 @@ import com.tentcoo.log.util.MyLog;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Method;
 
 /**
  * Created by rover on 2018/1/16.
@@ -42,7 +44,10 @@ public class MyWebLogAspect {
     @Around("@annotation(logAnnotation)")
     public Object around(ProceedingJoinPoint pjp, LogAnnotation logAnnotation) {
         //获取注解里的值
-        logger.info("3.second around:" + logAnnotation.value());
+        MethodSignature signature = (MethodSignature) pjp.getSignature();
+        Method method = signature.getMethod(); //获取被拦截的方法
+        String methodName = method.getName(); //获取被拦截的方法名
+        logger.info("3.second around:" + logAnnotation.value()+",methodName="+methodName);
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String jsonInfo = JSON.toJSONString(request.getParameterMap());
         logger.info("req.json="+jsonInfo);
