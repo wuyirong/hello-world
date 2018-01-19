@@ -1,4 +1,4 @@
-package com.tentcoo.data.dao;
+package com.tentcoo.data.mapper;
 
 import com.tentcoo.data.pojo.Security;
 

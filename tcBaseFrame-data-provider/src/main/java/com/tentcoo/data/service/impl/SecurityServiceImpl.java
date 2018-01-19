@@ -3,7 +3,7 @@ package com.tentcoo.data.service.impl;
 import javax.annotation.Resource;
 
 import com.tentcoo.data.api.SecurityService;
-import com.tentcoo.data.dao.SecurityMapper;
+import com.tentcoo.data.mapper.SecurityMapper;
 import com.tentcoo.data.pojo.Security;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,10 @@ package com.tentcoo.consumer.controller;
 
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.Date;
+import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +15,14 @@ import javax.servlet.http.HttpSession;
 //import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 //import org.springframework.context.annotation.ImportResource;
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.fastjson.JSON;
 import com.tentcoo.data.api.AnnotationService;
+import com.tentcoo.data.api.UserService;
+import com.tentcoo.data.entity.UserEntity;
 import com.tentcoo.log.annotation.LogAnnotation;
+import com.tentcoo.log.util.MyLog;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +37,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 //@EnableAutoConfiguration
 public class ParkingController {//extends WebMvcConfigurerAdapter
 
+	private MyLog logger = MyLog.getLog(ParkingController.class);
+
 	@Resource
 	private Map<String, InfrastructDeal> posDataServiceMap;
 	@Resource
@@ -35,6 +46,11 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 
 	@Reference//(version="1.0")
 	private AnnotationService annotationService;
+	@Reference
+	private UserService userService;
+
+	//@Value("#{propertyConfigurer['jdbc.type']}")
+	private String jdbcType;
 
 	@RequestMapping(value = "/getSession", method = RequestMethod.GET)
 	public void getSession(HttpServletRequest request, HttpServletResponse response) {
@@ -103,7 +119,19 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 //			AnnotationService handler = (AnnotationService)MyLogProxy.getInstance(annotationService);
 //			String responseResult = handler.getNameByKey(secretKey);
 			String responseResult = annotationService.getNameByKey(secretKey);
+			logger.info("jdbcType="+jdbcType);
 			//System.out.println("res="+responseResult);
+			List<UserEntity> userList = userService.all();
+			logger.info("######userList1="+ JSON.toJSONString(userList)+",size="+userList.size());
+			UserEntity userEntity = new UserEntity();
+			//userEntity.setId(UUID.randomUUID().toString().replace("-",""));
+			userEntity.setAddress("测试" + RandomStringUtils.randomAlphabetic(10));
+			userEntity.setSex("1");
+			userEntity.setBirthDay(new Date());
+			userEntity.setUserName("uName"+RandomStringUtils.randomAlphabetic(10));
+			userService.save(userEntity);
+			userList = userService.all();
+			logger.info("######userList2="+ JSON.toJSONString(userList)+",size="+userList.size());
 			return responseResult;
 		} catch (Exception ex) {
 			ex.printStackTrace();

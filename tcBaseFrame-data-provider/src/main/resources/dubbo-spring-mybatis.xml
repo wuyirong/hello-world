@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context-4.0.xsd   
+    http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	http://code.alibabatech.com/schema/dubbo         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 	<!-- 提供方应用信息，用于计算依赖关系 -->
@@ -15,7 +17,7 @@
 	<dubbo:protocol name="dubbo" port="20880" />
 
 	<!-- mybatis 相关 -->
-	<import resource="spring-mybatis.xml" />
+	<!--<import resource="spring-mybatis.xml" />-->
 
 	<!-- 使用注解方式暴露接口 -->
 	<!-- <dubbo:annotation package="com.tentcoo.data" /> -->
@@ -25,5 +27,41 @@
 
 	<!-- xml 配置文件， 对外发布的service接口部分 -->
 	<import resource="dubbo-services.xml" />
+
+	<!-- 配置Hibernate sessionFactory -->
+	<bean id="hbntSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" autowire="byName">
+		<property name="dataSource" ref="dataSource" />
+		<!--<property name="hibernateProperties" ref="hibernateProperties" />-->
+		<!-- Model包扫描（不要少了包名后的“.”） -->
+		<property name="packagesToScan">
+			<list>
+				<value>com.**.entity</value>
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop><!--MySQL5InnoDBDialect-->
+				<prop key="current_session_context_class">thread</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.use_sql_comments">true</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.jdbc.batch_size">20</prop>
+				<prop key="hibernate.jdbc.fetch_size">20</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- 配置事务管理器 -->
+	<!--<bean id="hbntTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="hbntSessionFactory" />
+	</bean>-->
+
+	<!-- 使用注解式事务 -->
+	<!--<tx:annotation-driven transaction-manager="hbntTransactionManager" proxy-target-class="true"/>-->
 
 </beans>
