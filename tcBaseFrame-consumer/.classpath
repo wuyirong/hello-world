@@ -18,7 +18,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="/tcBaseFrame-security"/>
 	<classpathentry kind="src" path="/tcBaseFrame-data-api"/>
-	<classpathentry kind="src" path="/tcBaseFrame-data-domain"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>

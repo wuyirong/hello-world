@@ -3,7 +3,6 @@
 	<name>tcBaseFrame-data-api</name>
 	<comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
 	<projects>
-		<project>tcBaseFrame-data-domain</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -5,7 +5,6 @@
 	<projects>
 		<project>tcBaseFrame-security</project>
 		<project>tcBaseFrame-data-api</project>
-		<project>tcBaseFrame-data-domain</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

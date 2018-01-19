@@ -250,7 +250,6 @@
 		<module>tcBaseFrame-security</module>
 		<module>tcBaseFrame-data-api</module>
 		<module>tcBaseFrame-data-provider</module>
-		<module>tcBaseFrame-data-domain</module>
 		<module>tcBaseFrame-utils</module>
 		<module>tcBaseFrame-client-test</module>
 		<module>tcBaseFrame-log</module>
