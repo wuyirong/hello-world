@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSON;
 import com.tentcoo.data.api.AnnotationService;
 import com.tentcoo.data.api.UserService;
 import com.tentcoo.data.entity.UserEntity;
+import com.tentcoo.data.pojo.Security;
 import com.tentcoo.log.annotation.LogAnnotation;
 import com.tentcoo.log.util.MyLog;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -118,9 +119,12 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 		try {
 //			AnnotationService handler = (AnnotationService)MyLogProxy.getInstance(annotationService);
 //			String responseResult = handler.getNameByKey(secretKey);
+			//MyBatis
 			String responseResult = annotationService.getNameByKey(secretKey);
-			logger.info("jdbcType="+jdbcType);
+			Security security = securityService.getSecurityByKey(secretKey);
+			logger.info("security="+JSON.toJSONString(security));
 			//System.out.println("res="+responseResult);
+			//jpa-hibernate
 			List<UserEntity> userList = userService.all();
 			logger.info("######userList1="+ JSON.toJSONString(userList)+",size="+userList.size());
 			UserEntity userEntity = new UserEntity();

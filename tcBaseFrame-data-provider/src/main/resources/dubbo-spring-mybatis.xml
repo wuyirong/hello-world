@@ -30,7 +30,7 @@
 
 	<!-- 配置Hibernate sessionFactory -->
 	<bean id="hbntSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" autowire="byName">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="tcBaseFrameDataSource" />
 		<!--<property name="hibernateProperties" ref="hibernateProperties" />-->
 		<!-- Model包扫描（不要少了包名后的“.”） -->
 		<property name="packagesToScan">

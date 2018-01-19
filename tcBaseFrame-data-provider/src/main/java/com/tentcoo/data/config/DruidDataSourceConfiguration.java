@@ -34,7 +34,7 @@ public class DruidDataSourceConfiguration {
      * @param properties 读入的配置
      * @return DruidDataSource
      */
-    @Bean(name="dataSource")
+    @Bean(name="tcBaseFrameDataSource")
     @ConfigurationProperties("spring.datasource.druid")
     public com.alibaba.druid.pool.DruidDataSource dataSource(DataSourceProperties properties) {
 
