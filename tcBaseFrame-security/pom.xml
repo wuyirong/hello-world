@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.zte-its</groupId>
+		<groupId>com.tentcoo-tcBaseFrame</groupId>
 		<artifactId>tcBaseFrame-parent</artifactId>
 		<version>1.0.0.0</version>
 	</parent>
@@ -43,12 +43,12 @@
 			<artifactId>tomcat-embed-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.zte-its</groupId>
+			<groupId>com.tentcoo-tcBaseFrame</groupId>
 			<artifactId>tcBaseFrame-data-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.zte-its</groupId>
+			<groupId>com.tentcoo-tcBaseFrame</groupId>
 			<artifactId>tcBaseFrame-utils</artifactId>
 			<version>${project.version}</version>
 		</dependency>
