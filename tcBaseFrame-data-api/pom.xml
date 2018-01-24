@@ -10,6 +10,7 @@
 	</parent>
 	<artifactId>tcBaseFrame-data-api</artifactId>
 	<name>tcBaseFrame-data-api</name>
+	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>com.tentcoo-tcBaseFrame</groupId>

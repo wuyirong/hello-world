@@ -25,13 +25,16 @@ import com.tentcoo.log.util.MyLog;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.tentcoo.data.api.SecurityService;
 import com.tentcoo.consumer.service.InfrastructDeal;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 //@ImportResource({ "classpath:applicationContext.xml", "dubbo-services.xml" })
@@ -141,6 +144,14 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 			ex.printStackTrace();
 		}
 		return "{success:false,message:'exception'}";
+	}
+
+	@RequestMapping(value = "/greeting", method = RequestMethod.GET)
+	public ModelAndView greeting(@RequestParam(value="name", required=false, defaultValue="say hi.") String name, ModelMap model) {
+		model.addAttribute("name", name);
+		ModelAndView view = new ModelAndView();
+		view.setViewName("demo/greeting");
+		return view;//demo/greeting
 	}
 
 }

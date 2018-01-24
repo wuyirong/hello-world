@@ -11,6 +11,7 @@
 	<artifactId>tcBaseFrame-security</artifactId>
 	<name>tcBaseFrame-security</name>
 	<url>http://maven.apache.org</url>
+	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>

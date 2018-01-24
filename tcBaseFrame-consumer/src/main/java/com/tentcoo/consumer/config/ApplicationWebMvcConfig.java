@@ -19,13 +19,14 @@ public class ApplicationWebMvcConfig extends WebMvcConfigurerAdapter {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-    
+
     @Bean
     public InternalResourceViewResolver viewResolver() {
         //System.out.println("######.viewResolver");
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/view/");
+        resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
+        resolver.setViewNames("org.springframework.web.servlet.view.JstlView");
         return resolver;
     }
 
