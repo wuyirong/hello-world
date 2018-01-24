@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tcBaseFrame-web:war">
+    <output-path>$PROJECT_DIR$/tcBaseFrame-web/target</output-path>
+    <root id="archive" name="tcBaseFrame-web.war">
+      <element id="artifact" artifact-name="tcBaseFrame-web:war exploded" />
+    </root>
+  </artifact>
+</component>

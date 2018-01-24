@@ -271,5 +271,6 @@
 		<module>tcBaseFrame-client-test</module>
 		<module>tcBaseFrame-log</module>
 		<module>tcBaseFrame-persistence</module>
+		<module>tcBaseFrame-web</module>
 	</modules>
 </project>
