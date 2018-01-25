@@ -19,7 +19,7 @@
 		</constructor-arg>
 	</bean>-->
 
-	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+	<!--<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
 		<property name="mediaTypes" >
 			<map>
 				<entry key="xml" value="application/xml"/>
@@ -38,9 +38,9 @@
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 		</mvc:message-converters>
-	</mvc:annotation-driven>
+	</mvc:annotation-driven>-->
 
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	<!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />-->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="messageConverters">
 			<list>
