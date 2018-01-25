@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TestController {
 
     @RequestMapping("/greeting")
-    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, ModelMap model) {
+    public String greeting(@RequestParam(value="name", required=false, defaultValue="世界杯.") String name, ModelMap model) {
         model.addAttribute("name", name);
         System.out.println("GRETTINGS, "+ name +"................!");
         return "demo/greeting";
