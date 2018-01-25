@@ -41,6 +41,18 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 		return applicationContext.getBean(requiredType);
 	}
 
+	public static boolean containsBean(String name) {
+		return applicationContext.containsBean(name);
+	}
+
+	public static boolean isSingleton(String name) {
+		return applicationContext.isSingleton(name);
+	}
+
+	public static Class<? extends Object> getType(String name) {
+		return applicationContext.getType(name);
+	}
+
 	/**
 	 * 清除SpringContextHolder中的ApplicationContext为Null.
 	 */

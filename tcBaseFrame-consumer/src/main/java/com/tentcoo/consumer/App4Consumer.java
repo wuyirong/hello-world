@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ImportResource;
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource({ "classpath:applicationContext.xml", "dubbo-services.xml" })
 @EnableAutoConfiguration
 //@ComponentScan("com.tentcoo.controller")
+@ServletComponentScan
 public class App4Consumer extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
