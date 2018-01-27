@@ -8,6 +8,8 @@
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.tentcoo.data.api.SecurityService"
 		ref="securityService" protocol="dubbo" timeout="100000" retries="0" />
+	<dubbo:service interface="com.tentcoo.data.api.EmployeeService"
+		ref="employeeService" protocol="dubbo" timeout="100000" retries="0" />
 
 	<dubbo:annotation package="com.tentcoo.data.service.impl"/>
 
