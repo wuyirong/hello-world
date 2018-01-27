@@ -147,6 +147,7 @@ public class ParkingController {//extends WebMvcConfigurerAdapter
 	}
 
 	@RequestMapping(value = "/greeting", method = RequestMethod.GET)
+	@LogAnnotation(value="调用greeting接口.")
 	public ModelAndView greeting(@RequestParam(value="name", required=false, defaultValue="say hi.") String name, ModelMap model) {
 		model.addAttribute("name", name);
 		ModelAndView view = new ModelAndView();
