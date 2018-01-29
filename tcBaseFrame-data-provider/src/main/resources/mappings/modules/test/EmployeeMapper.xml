@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tentcoo.data.mapper.EmployeeMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyColumn="id">
+    insert into employee (name,age) values (#{name},#{age});
+  </insert>
+    <update id="update">
+        update employee set name = #{name},age = #{age} where id=#{id};
+    </update>
+    <delete id="delete">
+    DELETE FROM employee WHERE id=#{empId};
+  </delete>
+    <select id="get" resultType="com.tentcoo.data.pojo.Employee">
+        select id,name,age from employee WHERE id=#{empId};
+    </select>
+
+    <select id="listAll" resultType="com.tentcoo.data.pojo.Employee">
+        select id,name,age from employee;
+    </select>
+    <select id="queryForList" resultType="com.tentcoo.data.pojo.Employee">
+        SELECT id,name,age FROM employee <include refid="baseWhere"/>  limit #{start} , #{pageSize};
+    </select>
+    <select id="queryForCount" resultType="java.lang.Integer">
+        SELECT count(id) FROM employee <include refid="baseWhere"/>
+    </select>
+    <sql id="baseWhere">
+        <where>
+            <if test="age != null and age !=''">
+                and age = #{age}
+            </if>
+            <if test="name != null and name != ''">
+                and name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </sql>
+</mapper>
