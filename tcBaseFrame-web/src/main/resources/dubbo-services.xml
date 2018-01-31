@@ -9,7 +9,5 @@
 	<dubbo:registry address="zookeeper://localhost:2181" />
 	<!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
 	<dubbo:reference id="employeeService" interface="com.tentcoo.data.api.EmployeeService" timeout="100000" retries="0" />
-
-	<dubbo:annotation package="com.tentcoo.web"/>
-	<!--<dubbo:annotation package="com.tentcoo.data.api"/>-->
+	<dubbo:annotation package="com.tentcoo"/>
 </beans>

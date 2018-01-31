@@ -35,7 +35,18 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
             <version>${spring-boot-version}</version>
         </dependency>
-
+        <!--在freemarker上使用shiro标签需要用此依赖-->
+        <dependency>
+            <groupId>net.mingsoft</groupId>
+            <artifactId>shiro-freemarker-tags</artifactId>
+            <version>0.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-context</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -200,6 +211,12 @@
             <artifactId>spring-boot-devtools</artifactId>
             <version>${spring-boot-version}</version>
             <optional>true</optional>
+        </dependency>
+        <!--security-->
+        <dependency>
+            <groupId>com.tentcoo-tcBaseFrame</groupId>
+            <artifactId>tcBaseFrame-security</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
     </dependencies>

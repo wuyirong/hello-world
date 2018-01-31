@@ -26,4 +26,6 @@ public interface EmployeeMapper {
 
     //查询总数据条数
     int queryForCount(EmployeeQueryObject qo);
+
+    Employee getLoginInfoByUserName(String username);
 }
