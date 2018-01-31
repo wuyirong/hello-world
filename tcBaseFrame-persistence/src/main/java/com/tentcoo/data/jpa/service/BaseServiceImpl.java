@@ -1,17 +1,15 @@
 package com.tentcoo.data.jpa.service;
 
-import java.io.Serializable;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.persistence.LockModeType;
-
 import com.tentcoo.data.jpa.dao.BaseDao;
 import com.tentcoo.data.jpa.dto.Pager;
 import com.tentcoo.data.jpa.dto.QueryResult;
 import com.tentcoo.data.jpa.exception.ServiceException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.LockModeType;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * BaseService实现层，所有的service实现层都要继承自该类。
@@ -34,7 +32,7 @@ public class BaseServiceImpl<T extends Serializable> implements BaseService<T>{
 	 * @return 返回baseDao实例
 	 */
 //	@Autowired
-	@Resource
+	//@Resource  解开注释报错
 	public BaseDao<T> baseDao;
 
 	public BaseDao<T> getBaseDao() {

@@ -38,4 +38,7 @@ public interface EmployeeService {
      * @return
      */
     PageResult queryPageResult(EmployeeQueryObject qo);
+
+    Employee getLoginInfoByUserName(String username);
+
 }

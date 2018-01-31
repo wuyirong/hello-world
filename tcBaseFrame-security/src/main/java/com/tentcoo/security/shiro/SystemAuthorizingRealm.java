@@ -1,10 +1,13 @@
 package com.tentcoo.security.shiro;
 
+import com.tentcoo.data.api.EmployeeService;
+import com.tentcoo.data.pojo.Employee;
 import com.tentcoo.log.util.MyLog;
 import com.tentcoo.security.utils.UserUtil;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.Permission;
@@ -12,6 +15,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -22,10 +26,11 @@ import java.util.List;
 public class SystemAuthorizingRealm extends AuthorizingRealm {
 
     private MyLog logger = MyLog.getLog(SystemAuthorizingRealm.class);
-
-    public static final String HASH_ALGORITHM = "SHA-1";
-    public static final int SALT_SIZE = 8;
-    public static final int HASH_INTERATIONS = 1024;
+    @Resource
+    private EmployeeService    employeeService;
+    public static final String HASH_ALGORITHM   = "SHA-1";
+    public static final int    SALT_SIZE        = 8;
+    public static final int    HASH_INTERATIONS = 1024;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -34,11 +39,23 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
         return null;
     }
 
+    /**
+     * 登录校验
+     *
+     * @param authcToken
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
-        UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
-        //todo
-        return null;
+        UsernamePasswordToken token     = (UsernamePasswordToken) authcToken;
+        String   username = (String) token.getPrincipal();
+        Employee employee = employeeService.getLoginInfoByUserName(username);
+        if (employee == null) {
+            return null;
+        }
+
+        return new SimpleAuthenticationInfo(employee, employee.getPassword(), this.getName());
     }
 
     /**
@@ -85,9 +102,10 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
     /**
      * 授权验证方法
+     *
      * @param permission
      */
-    private void authorizationValidate(Permission permission){
+    private void authorizationValidate(Permission permission) {
         // 模块授权预留接口
     }
 
@@ -95,9 +113,9 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
         private static final long serialVersionUID = 1L;
 
-        private String id; // 编号
-        private String loginName; // 登录名
-        private String name; // 姓名
+        private String  id; // 编号
+        private String  loginName; // 登录名
+        private String  name; // 姓名
         private boolean mobileLogin; // 是否手机登录
 
 //		private Map<String, Object> cacheMap;
@@ -137,9 +155,9 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
          * 获取SESSIONID
          */
         public String getSessionid() {
-            try{
+            try {
                 return (String) UserUtil.getSession().getId();
-            }catch (Exception e) {
+            } catch (Exception e) {
                 return "";
             }
         }

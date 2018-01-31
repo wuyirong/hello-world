@@ -24,6 +24,9 @@
     <select id="queryForCount" resultType="java.lang.Integer">
         SELECT count(id) FROM employee <include refid="baseWhere"/>
     </select>
+    <select id="getLoginInfoByUserName" resultType="com.tentcoo.data.pojo.Employee">
+        SELECT id,name,age,username,password FROM employee WHERE username = #{username}
+    </select>
     <sql id="baseWhere">
         <where>
             <if test="age != null and age !=''">

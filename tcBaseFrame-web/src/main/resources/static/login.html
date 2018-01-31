@@ -1,0 +1,196 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.js"></script>
+    <script type="text/javascript">
+        var code; //在全局 定义验证码
+        var code2; //在全局 定义验证码
+        function createCode() {
+            code = "";
+            var checkCode = document.getElementById("checkCode");
+
+            function RndNum(n) {
+                var rnd = "";
+                for (var i = 0; i < n; i++)
+                    rnd += Math.floor(Math.random() * 10);
+                return rnd;
+            }
+
+            var num = RndNum(2);
+            var num2 = RndNum(2);
+
+            code = num + "+" + num2 + "=";
+            code2 = parseInt(num) + parseInt(num2)
+
+            if (checkCode) {
+                checkCode.className = "code";
+                checkCode.value = code;
+            }
+
+        }
+        $(function () {
+            $("#captcha").hide();
+            $("#loginBtn").click(function () {
+                var msg = $("#checkCode").data("msg");
+                var inputCode = document.getElementById("input1").value;
+                if (msg == "need") {
+                    if (inputCode.length <= 0) {
+                        alert("请输入验证码");
+                        return;
+                    }else if (inputCode != code2) {
+                        alert("验证码输入错误！");
+                        createCode(); //刷新验证码
+                    }
+                }
+                $("#loginForm").ajaxSubmit(function (data) {
+                    data = $.parseJSON(data);
+                    console.log(data);
+                    if (data.success) {
+                        window.location.href = '/index';
+                    } else if (data.failureNum >= 3) {
+                        alert(data.msg);
+                        $("#checkCode").data("msg", "need");
+                        createCode();
+                        $("#captcha").show();
+                    } else {
+                        alert(data.msg);
+                        $("#captcha").hide();
+                    }
+                })
+            })
+        })
+    </script>
+    <style type="text/css">
+
+    </style>
+    <title>登陆界面</title>
+    <style>
+        /*验证码*/
+        .code {
+            font-family: Arial;
+            font-style: italic;
+            color: Red;
+            border: 0;
+            padding: 2px 3px;
+            letter-spacing: 3px;
+            font-weight: bolder;
+        }
+        .unchanged {
+            border: 0;
+        }
+        html {
+            background-color: #B5DEF2;
+        }
+
+        .wrapper {
+            margin: 140px 0 140px auto;
+            width: 884px;
+        }
+
+        .loginBox {
+            background-color: #F0F4F6;
+            /*上divcolor*/
+            border: 1px solid #BfD6E1;
+            border-radius: 5px;
+            color: #444;
+            font: 14px 'Microsoft YaHei', '微软雅黑';
+            margin: 0 auto;
+            width: 388px
+        }
+
+        .loginBox .loginBoxCenter {
+            border-bottom: 1px solid #DDE0E8;
+            padding: 24px;
+        }
+
+        .loginBox .loginBoxCenter p {
+            margin-bottom: 10px
+        }
+
+        .loginBox .loginBoxButtons {
+            /*background-color: #F0F4F6;*/
+            /*下divcolor*/
+            border-top: 0px solid #FFF;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            line-height: 28px;
+            overflow: hidden;
+            padding: 20px 24px;
+            vertical-align: center;
+            filter: alpha(Opacity=80);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+        }
+
+        .loginBox .loginInput {
+            border: 1px solid #D2D9dC;
+            border-radius: 2px;
+            color: #444;
+            font: 12px 'Microsoft YaHei', '微软雅黑';
+            padding: 8px 14px;
+            margin-bottom: 8px;
+            width: 310px;
+        }
+
+        .loginBox .loginInput:FOCUS {
+            border: 1px solid #B7D4EA;
+            box-shadow: 0 0 8px #B7D4EA;
+        }
+
+        .loginBox .loginBtn {
+            background-image: -moz-linear-gradient(to bottom, blue, #85CFEE);
+            border: 1px solid #98CCE7;
+            border-radius: 20px;
+            box-shadow: inset rgba(255, 255, 255, 0.6) 0 1px 1px, rgba(0, 0, 0, 0.1) 0 1px 1px;
+            color: #444;
+            /*登录*/
+            cursor: pointer;
+            float: right;
+            font: bold 13px Arial;
+            padding: 10px 50px;
+        }
+
+        .loginBox .loginBtn:HOVER {
+            background-image: -moz-linear-gradient(to top, blue, #85CFEE);
+        }
+
+        .loginBox input#remember {
+            vertical-align: middle;
+        }
+
+        .loginBox label[for="remember"] {
+            font: 11px Arial;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <form action="/checkLogin" method="post" id="loginForm">
+        <div class="loginBox">
+            <div class="loginBoxCenter">
+                <p><label>用户名：</label></p>
+                <p><input type="text" id="text" name="username" class="loginInput" autofocus="autofocus"
+                          placeholder="请输入用户名" required="required" autocomplete="off" value=""/></p>
+                <p><label for="password">密码：</label></p>
+                <p><input type="password" id="password" name="password" class="loginInput" required="required"
+                          placeholder="请输入密码" value=""/></p>
+            </div>
+            <div class="loginBoxCenter" id="captcha">
+                <!--<label for="password">请输入验证码：</label>
+                <input type="text" class="input3" id="captchaVal" data-msg="" required="required"
+                       name="captchaParam"/><img
+                    id="captchaImg" src="/randomCode"/>-->
+                请输入验证码：<input type="text" onclick="createCode()" readonly="readonly" data-msg="" id="checkCode"
+                       class="unchanged"
+                       style="width: 80px;background: #660099"/>
+                <input type="text" required="required" id="input1"/>
+            </div>
+            <div class="loginBoxButtons">
+                <input type="button" class="loginBtn" id="loginBtn" value="登录"></input>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

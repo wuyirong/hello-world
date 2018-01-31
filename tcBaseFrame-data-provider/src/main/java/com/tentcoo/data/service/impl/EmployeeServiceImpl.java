@@ -68,4 +68,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         int            totalCount = employeeMapper.queryForCount(qo);
         return new PageResult(qo.getCurrentPage(),qo.getPageSize(),list, totalCount);
     }
+
+    @Override
+    public Employee getLoginInfoByUserName(String username) {
+        return employeeMapper.getLoginInfoByUserName(username);
+    }
+
 }
