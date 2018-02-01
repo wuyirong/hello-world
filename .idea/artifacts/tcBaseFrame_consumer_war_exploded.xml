@@ -78,6 +78,11 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.8" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.3" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus:2.1.9" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-support:2.1.9" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:2.1.9" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:1.1" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-generate:2.1.9" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.0.12.Final" />
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" />
