@@ -70,6 +70,8 @@
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: javax.el:javax.el-api:2.2.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.4.7.RELEASE" level="project" />
     <orderEntry type="module" module-name="tcBaseFrame-data-api" />
     <orderEntry type="module" module-name="tcBaseFrame-log" />
@@ -88,7 +90,6 @@
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:dubbo:2.5.8" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" level="project" />

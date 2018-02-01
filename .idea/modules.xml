@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-client-test/tcBaseFrame-client-test.iml" filepath="$PROJECT_DIR$/tcBaseFrame-client-test/tcBaseFrame-client-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-consumer/tcBaseFrame-consumer.iml" filepath="$PROJECT_DIR$/tcBaseFrame-consumer/tcBaseFrame-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-data-api/tcBaseFrame-data-api.iml" filepath="$PROJECT_DIR$/tcBaseFrame-data-api/tcBaseFrame-data-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-data-provider/tcBaseFrame-data-provider.iml" filepath="$PROJECT_DIR$/tcBaseFrame-data-provider/tcBaseFrame-data-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-log/tcBaseFrame-log.iml" filepath="$PROJECT_DIR$/tcBaseFrame-log/tcBaseFrame-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-parent.iml" filepath="$PROJECT_DIR$/tcBaseFrame-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-persistence/tcBaseFrame-persistence.iml" filepath="$PROJECT_DIR$/tcBaseFrame-persistence/tcBaseFrame-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-security/tcBaseFrame-security.iml" filepath="$PROJECT_DIR$/tcBaseFrame-security/tcBaseFrame-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-utils/tcBaseFrame-utils.iml" filepath="$PROJECT_DIR$/tcBaseFrame-utils/tcBaseFrame-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-web/tcBaseFrame-web.iml" filepath="$PROJECT_DIR$/tcBaseFrame-web/tcBaseFrame-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webMgr.iml" filepath="$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webMgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webSys.iml" filepath="$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webSys.iml" />
+    </modules>
+  </component>
+</project>

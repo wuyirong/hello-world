@@ -12,7 +12,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="tcBaseFrame-data-api" />
     <orderEntry type="module" module-name="tcBaseFrame-log" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.4" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.10" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.3" level="project" />
@@ -25,8 +24,12 @@
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
-    <orderEntry type="module" module-name="tcBaseFrame-persistence" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-validator:5.2.4.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: javax.el:javax.el-api:2.2.4" level="project" />
+    <orderEntry type="module" module-name="tcBaseFrame-persistence" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:dubbo:2.5.8" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" level="project" />
@@ -34,6 +37,8 @@
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.20.0-GA" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.netty:netty:3.2.5.Final" level="project" />
     <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.10" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty:3.10.5.Final" level="project" />
