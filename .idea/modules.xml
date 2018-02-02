@@ -12,7 +12,6 @@
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-security/tcBaseFrame-security.iml" filepath="$PROJECT_DIR$/tcBaseFrame-security/tcBaseFrame-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-utils/tcBaseFrame-utils.iml" filepath="$PROJECT_DIR$/tcBaseFrame-utils/tcBaseFrame-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-web/tcBaseFrame-web.iml" filepath="$PROJECT_DIR$/tcBaseFrame-web/tcBaseFrame-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webMgr.iml" filepath="$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webMgr.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webSys.iml" filepath="$PROJECT_DIR$/tcBaseFrame-webSys/tcBaseFrame-webSys.iml" />
     </modules>
   </component>
