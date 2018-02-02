@@ -62,17 +62,17 @@
             <artifactId>mybatis-spring</artifactId>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
             <version>${mybatis-plus-version}</version>
-            <!--<exclusions>
+            &lt;!&ndash;<exclusions>
                 <exclusion>
                     <groupId>com.baomidou</groupId>
                     <artifactId>mybatis-plus-generate</artifactId>
                 </exclusion>
-            </exclusions>-->
-        </dependency>
+            </exclusions>&ndash;&gt;
+        </dependency>-->
 
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>

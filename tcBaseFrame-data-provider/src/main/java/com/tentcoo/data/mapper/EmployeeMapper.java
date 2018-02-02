@@ -1,5 +1,7 @@
 package com.tentcoo.data.mapper;
 
+import com.tentcoo.data.mybatis.annotation.MyBatisDao;
+import com.tentcoo.data.mybatis.dao.CrudDao;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.pojo.Employee;
 
@@ -9,13 +11,14 @@ import java.util.List;
  * @author Administrator
  * @date 2018/1/26 0026
  */
-public interface EmployeeMapper {
+@MyBatisDao
+public interface EmployeeMapper extends CrudDao<Employee> {
 
-    int save(Employee employee);
+    int save2(Employee employee);
 
     void delete(long empId);
 
-    void update(Employee employee);
+    int update(Employee employee);
 
     Employee get(long empId);
 

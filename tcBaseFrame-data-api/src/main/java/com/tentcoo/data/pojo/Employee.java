@@ -1,5 +1,7 @@
 package com.tentcoo.data.pojo;
 
+import com.tentcoo.data.mybatis.entity.DataEntity;
+
 import java.io.Serializable;
 
 /**
@@ -8,8 +10,8 @@ import java.io.Serializable;
  * @author Administrator
  * @date 2018/1/26 0026
  */
-public class Employee implements Serializable {
-    private Long   id;
+public class Employee extends DataEntity<Employee> implements Serializable {
+//    private Long   id;
     private String name;
     private int    age;
     private String username;
@@ -31,13 +33,13 @@ public class Employee implements Serializable {
         this.password = password;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;

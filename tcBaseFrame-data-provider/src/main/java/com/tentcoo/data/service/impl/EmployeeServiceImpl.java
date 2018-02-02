@@ -3,12 +3,16 @@ package com.tentcoo.data.service.impl;
 import com.tentcoo.data.api.EmployeeService;
 import com.tentcoo.data.mapper.EmployeeMapper;
 import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.data.mybatis.service.CrudService;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.page.PageResult;
 import com.tentcoo.data.pojo.Employee;
+import com.tentcoo.utils.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,14 +20,32 @@ import java.util.List;
  * @date 2018/1/26 0026
  */
 @Service(value = "employeeService")
-public class EmployeeServiceImpl implements EmployeeService {
+@Transactional(readOnly = true)
+public class EmployeeServiceImpl extends CrudService<EmployeeMapper, Employee> implements EmployeeService {
 
     @Resource
     private EmployeeMapper employeeMapper;
 
+    @Transactional(readOnly = false)
+    public Page<Employee> findPage(Page<Employee> page, Employee employee) {
+        return super.findPage(page, employee);
+    }
+
     @Override
-    public int save(Employee employee) {
-        return employeeMapper.save(employee);
+    public int save2(Employee employee) {
+        return employeeMapper.save2(employee);
+    }
+
+    @Transactional(readOnly = false)
+    public void save(Employee employee) {
+        employee.setUpdateDate(new Date());
+        if (StringUtils.isBlank(employee.getId())){
+            employee.preInsert();
+            dao.insert(employee);
+        }else{
+            employee.preUpdate();
+            dao.update(employee);
+        }
     }
 
     @Override

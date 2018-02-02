@@ -13,7 +13,7 @@ import java.util.List;
  * @date 2018/1/26 0026
  */
 public interface EmployeeService {
-    int save(Employee employee);
+    int save2(Employee employee);
 
     void delete(long empId);
 
@@ -24,6 +24,9 @@ public interface EmployeeService {
     List<Employee> listAll();
 
     void saveOrUpDate(Employee employee);
+
+    public void save(Employee employee);
+    public Page<Employee> findPage(Page<Employee> page, Employee employee);
 
     /**
      * 分页

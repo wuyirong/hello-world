@@ -37,4 +37,19 @@
             </if>
         </where>
     </sql>
+
+    <sql id="employeeColumns">
+        id,name,age,username,password
+    </sql>
+
+    <select id="findList" resultType="com.tentcoo.data.pojo.Employee">
+        SELECT
+        <include refid="employeeColumns"/>
+        FROM employee a WHERE 1=1 order by id
+    </select>
+
+    <insert id="insert" parameterType="com.tentcoo.data.pojo.Employee">
+        insert into employee (id,name,age) values (#{id},#{name},#{age});
+    </insert>
+
 </mapper>

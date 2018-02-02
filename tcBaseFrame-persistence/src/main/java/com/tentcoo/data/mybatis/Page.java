@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  * 分页类
  * @param <T>
  */
-public class Page<T> {
+public class Page<T> implements java.io.Serializable{
 	
 	private int pageNo = 1; // 当前页码
 	private int pageSize = Integer.valueOf(10); // 页面大小，设置为“-1”表示不进行分页（分页无效） //Global.getConfig("page.pageSize")
@@ -42,6 +42,8 @@ public class Page<T> {
 	private String funcParam = ""; // 函数的附加参数，第三个参数值。
 	
 	private String message = ""; // 设置提示消息，显示在“共n条”之后
+
+	private Integer totalPage;
 
 	public Page() {
 		this.pageSize = -1;
@@ -137,7 +139,11 @@ public class Page<T> {
 		this.pageSize = pageSize;
 		this.list = list;
 	}
-	
+
+	public int getTotalPages() {
+		return Long.valueOf(count % pageSize == 0 ? count / pageSize : count / pageSize + 1).intValue();
+	}
+
 	/**
 	 * 初始化参数
 	 */

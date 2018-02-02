@@ -1,6 +1,7 @@
 package com.tentcoo.websys.controller;
 
 import com.tentcoo.data.api.EmployeeService;
+import com.tentcoo.data.mybatis.Page;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.page.PageResult;
 import com.tentcoo.data.pojo.Employee;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by rover on 2018/1/24.
@@ -43,9 +46,20 @@ public class TestController extends BaseController{
         return "employee/list2";
     }
 
+    @RequestMapping("list3")
+    public String list3(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+        Employee employee = new Employee();
+        Page<Employee> page = new Page<Employee>(request, response);
+        page.setPageSize(5);
+        page = employeeService.findPage(page, employee);
+        model.addAttribute("page", page);
+        return "employee/list3";
+    }
+
     @RequestMapping("saveOrUpdate")
     public String saveOrUpdate(Employee employee) {
-        employeeService.saveOrUpDate(employee);
+        //employeeService.saveOrUpDate(employee);
+        employeeService.save(employee);
         return "redirect:/websys/list";
     }
 
