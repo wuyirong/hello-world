@@ -1,5 +1,4 @@
-/***/
-package com.tentcoo.data.mybatis;
+package com.tentcoo.common.mybatis;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tentcoo.utils.CookieUtils;

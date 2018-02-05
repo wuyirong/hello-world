@@ -1,7 +1,7 @@
 /***/
 package com.tentcoo.data.mybatis.interceptor;
 
-import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.data.mybatis.dialect.Dialect;
 import com.tentcoo.data.mybatis.dialect.db.*;
 import com.tentcoo.utils.Reflections;

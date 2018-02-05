@@ -7,6 +7,7 @@ import com.tentcoo.data.jpa.exception.ServiceException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import javax.persistence.LockModeType;
 import java.io.Serializable;
 import java.util.List;
@@ -32,7 +33,7 @@ public class BaseServiceImpl<T extends Serializable> implements BaseService<T>{
 	 * @return 返回baseDao实例
 	 */
 //	@Autowired
-	//@Resource  解开注释报错
+	@Resource  //解开注释报错
 	public BaseDao<T> baseDao;
 
 	public BaseDao<T> getBaseDao() {

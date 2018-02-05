@@ -35,7 +35,7 @@
 		<!-- Model包扫描（不要少了包名后的“.”） -->
 		<property name="packagesToScan">
 			<list>
-				<value>com.**.entity</value>
+				<value>com.tentcoo.data.entity</value>
 			</list>
 		</property>
 

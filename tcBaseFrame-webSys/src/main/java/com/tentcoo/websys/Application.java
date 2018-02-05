@@ -2,10 +2,12 @@ package com.tentcoo.websys;
 
 import com.tentcoo.common.servlet.ValidateCodeServlet;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -16,6 +18,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @SpringBootApplication
 @EnableAsync
+@EnableAutoConfiguration
+@ComponentScan
 @ServletComponentScan
 @ImportResource({ "classpath:dubbo-services.xml"}) //,"freemarker-shiro.xml"
 public class Application extends WebMvcConfigurerAdapter {

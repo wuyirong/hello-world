@@ -1,7 +1,8 @@
 package com.tentcoo.websys.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.data.api.EmployeeService;
-import com.tentcoo.data.mybatis.Page;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.page.PageResult;
 import com.tentcoo.data.pojo.Employee;
@@ -22,7 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/websys")
 public class TestController extends BaseController{
 
-    @Resource
+    //@Resource
+    @Reference
     private EmployeeService employeeService;
 
     @RequestMapping("/greeting")

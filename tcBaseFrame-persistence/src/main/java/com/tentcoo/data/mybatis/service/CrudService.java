@@ -1,6 +1,6 @@
 package com.tentcoo.data.mybatis.service;
 
-import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.data.mybatis.dao.CrudDao;
 import com.tentcoo.data.mybatis.entity.DataEntity;
 import org.springframework.beans.factory.annotation.Autowired;

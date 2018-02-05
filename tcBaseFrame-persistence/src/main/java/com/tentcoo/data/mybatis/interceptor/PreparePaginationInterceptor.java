@@ -1,7 +1,7 @@
 /***/
 package com.tentcoo.data.mybatis.interceptor;
 
-import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.utils.Reflections;
 import org.apache.ibatis.executor.statement.BaseStatementHandler;
 import org.apache.ibatis.executor.statement.RoutingStatementHandler;

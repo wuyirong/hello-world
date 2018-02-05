@@ -3,7 +3,8 @@ package com.tentcoo.data.mybatis.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 //import com.tentcoo.frame.modules.sys.entity.User;
 //import com.tentcoo.frame.modules.sys.utils.UserUtils;
-import com.tentcoo.data.mybatis.Page;
+//import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.utils.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 

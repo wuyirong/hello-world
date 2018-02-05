@@ -1,6 +1,6 @@
 package com.tentcoo.data.api;
 
-import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.page.PageResult;
 import com.tentcoo.data.pojo.Employee;

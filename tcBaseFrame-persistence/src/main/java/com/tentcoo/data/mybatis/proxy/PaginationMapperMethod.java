@@ -1,6 +1,6 @@
 package com.tentcoo.data.mybatis.proxy;
 
-import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.common.mybatis.Page;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.binding.BindingException;
 import org.apache.ibatis.mapping.MappedStatement;

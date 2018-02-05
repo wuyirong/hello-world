@@ -1,5 +1,4 @@
-/***/
-package com.tentcoo.data.mybatis;
+package com.tentcoo.common.mybatis;
 
 import java.util.HashMap;
 

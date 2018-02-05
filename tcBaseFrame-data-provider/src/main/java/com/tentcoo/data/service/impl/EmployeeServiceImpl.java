@@ -1,8 +1,8 @@
 package com.tentcoo.data.service.impl;
 
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.data.api.EmployeeService;
 import com.tentcoo.data.mapper.EmployeeMapper;
-import com.tentcoo.data.mybatis.Page;
 import com.tentcoo.data.mybatis.service.CrudService;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.page.PageResult;

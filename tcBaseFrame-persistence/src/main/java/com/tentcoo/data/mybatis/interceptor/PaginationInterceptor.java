@@ -1,6 +1,6 @@
 package com.tentcoo.data.mybatis.interceptor;
 
-import com.tentcoo.data.mybatis.Page;
+import com.tentcoo.common.mybatis.Page;
 import com.tentcoo.utils.Reflections;
 import com.tentcoo.utils.StringUtils;
 import org.apache.ibatis.executor.Executor;
