@@ -6,11 +6,13 @@ import com.tentcoo.data.api.EmployeeService;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.page.PageResult;
 import com.tentcoo.data.pojo.Employee;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by rover on 2018/1/24.
  */
+@Api(value="后台管理的相关接口")
 @Controller
 @RequestMapping("/websys")
 public class TestController extends BaseController{
@@ -27,28 +30,33 @@ public class TestController extends BaseController{
     @Reference
     private EmployeeService employeeService;
 
-    @RequestMapping("/greeting")
+    @GetMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="世界杯.") String name, ModelMap model) {
         model.addAttribute("name", name);
         logger.info("GRETTINGS, "+ name +"................!");
         logger.info("admin.path="+adminPath);
         return "websys/greeting";
     }
-    @RequestMapping("list")
+    @GetMapping("list")
     public String listAll(ModelMap model,@ModelAttribute("qo") EmployeeQueryObject qo) {
         PageResult result = employeeService.queryPageResult(qo);
         model.addAttribute("result", result);
         return "employee/list";
     }
 
-    @RequestMapping("list2")
+    @GetMapping("list2")
     public String list2(ModelMap model,@ModelAttribute("qo") EmployeeQueryObject qo) {
         PageResult result = employeeService.queryPageResult(qo);
         model.addAttribute("result", result);
         return "employee/list2";
     }
 
-    @RequestMapping("list3")
+    @ApiOperation(value ="查询雇员列表信息", notes="")
+    @ApiImplicitParams({
+        @ApiImplicitParam(name = "name", value = "姓名", required = false, dataType = "String"),
+        @ApiImplicitParam(name = "age", value = "年龄", required = false, dataType = "Integer")
+    })
+    @GetMapping("list3")
     public String list3(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
         Employee employee = new Employee();
         Page<Employee> page = new Page<Employee>(request, response);
@@ -58,21 +66,23 @@ public class TestController extends BaseController{
         return "employee/list3";
     }
 
-    @RequestMapping("saveOrUpdate")
+    @ApiOperation(value ="保存or更新雇员信息", notes="")
+    @PostMapping("saveOrUpdate")
     public String saveOrUpdate(Employee employee) {
         //employeeService.saveOrUpDate(employee);
         employeeService.save(employee);
         return "redirect:/websys/list";
     }
 
-    @RequestMapping("delete")
+    @ApiOperation(value ="删除雇员信息", notes="")
+    @PostMapping("delete")
     public String delete(Long id) {
         if (id != null) {
             employeeService.delete(id);
         }
         return "redirect:/websys/list";
     }
-    @RequestMapping("test")
+    @GetMapping("test")
     public String test() {
         return "demo/test";
     }

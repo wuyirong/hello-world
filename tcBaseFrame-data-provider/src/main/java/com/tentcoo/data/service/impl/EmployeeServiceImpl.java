@@ -49,6 +49,7 @@ public class EmployeeServiceImpl extends CrudService<EmployeeMapper, Employee> i
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void delete(long empId) {
         employeeMapper.delete(empId);
     }
