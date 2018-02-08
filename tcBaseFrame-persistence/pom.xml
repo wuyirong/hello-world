@@ -104,7 +104,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>4.3.10.RELEASE</version>
+            <version>${spring-version}</version>
         </dependency>
     </dependencies>
 
