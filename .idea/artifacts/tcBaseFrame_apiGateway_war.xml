@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tcBaseFrame-apiGateway:war">
+    <output-path>$PROJECT_DIR$/tcBaseFrame-apiGateway/target</output-path>
+    <root id="archive" name="tcBaseFrame-apiGateway.war">
+      <element id="artifact" artifact-name="tcBaseFrame-apiGateway:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/tcBaseFrame-apiGateway.iml" filepath="$PROJECT_DIR$/tcBaseFrame-apiGateway/tcBaseFrame-apiGateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-client-test/tcBaseFrame-client-test.iml" filepath="$PROJECT_DIR$/tcBaseFrame-client-test/tcBaseFrame-client-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-consumer/tcBaseFrame-consumer.iml" filepath="$PROJECT_DIR$/tcBaseFrame-consumer/tcBaseFrame-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-data-api/tcBaseFrame-data-api.iml" filepath="$PROJECT_DIR$/tcBaseFrame-data-api/tcBaseFrame-data-api.iml" />

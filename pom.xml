@@ -278,5 +278,6 @@
 		<module>tcBaseFrame-persistence</module>
 		<module>tcBaseFrame-web</module>
 		<module>tcBaseFrame-webSys</module>
+		<module>tcBaseFrame-apiGateway</module>
 	</modules>
 </project>
