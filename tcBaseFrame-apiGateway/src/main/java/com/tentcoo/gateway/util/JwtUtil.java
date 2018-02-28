@@ -17,7 +17,7 @@ import java.util.Map;
 @Component
 public class JwtUtil {
 
-    private static final String CLAIM_KEY_USER_ACCOUNT = "user_account";//sub
+    private static final String CLAIM_KEY_USER_ACCOUNT = "sub";
     private static final String CLAIM_KEY_CREATED = "created";
 
     @Value("${jwt.secret}")

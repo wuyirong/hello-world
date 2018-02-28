@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a61a8851-8aca-4f7a-aa99-b457ef1f5ecb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_4_2_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_4_2_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_4_2_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/config/JwtAuthenticationEntryPoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/config/WebSecurityConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/filter/JwtAuthenticationTokenFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_4_2_3_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_4_2_4_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/tcBaseFrame_apiGateway_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/tcBaseFrame_apiGateway_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/AesUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/Base64Utils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/Des.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/DesUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSATester.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSAUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcBaseFrame-apiGateway/pom.xml" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtUtil.java" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcBaseFrame-apiGateway/tcBaseFrame-apiGateway.iml" afterPath="$PROJECT_DIR$/tcBaseFrame-apiGateway/tcBaseFrame-apiGateway.iml" />
     </list>
     <ignored path="tcBaseFrame.iws" />
@@ -53,7 +50,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="468">
               <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="51" />
               <folding />
             </state>
@@ -65,7 +62,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#894#895#0" expanded="false" />
+                <element signature="e#957#958#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,7 +76,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
               <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1459#1460#0" expanded="false" />
+                <element signature="e#1512#1513#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,8 +91,7 @@
             <state relative-caret-position="132">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
-                <element signature="e#3082#3083#0" expanded="true" />
-                <element signature="e#3116#3117#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -96,8 +100,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            <state relative-caret-position="328">
+              <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -106,8 +110,8 @@
       <file leaf-file-name="ApiGateWayApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/ApiGateWayApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="264">
+              <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#603#604#0" expanded="true" />
@@ -117,38 +121,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccessFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/filter/AccessFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JwtUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JwtUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="20" column="60" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2416#2417#0" expanded="true" />
-                <element signature="e#2495#2496#0" expanded="true" />
+                <element signature="e#2402#2403#0" expanded="true" />
+                <element signature="e#2481#2482#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JwtTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1917#1918#0" expanded="true" />
+                <element signature="e#1990#1991#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Base64Utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/Base64Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RSAUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSAUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="78" column="48" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2048#2064#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RSATester.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSATester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,11 +187,9 @@
       <file leaf-file-name="JwtAuthenticationTokenFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/filter/JwtAuthenticationTokenFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="204">
               <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -201,13 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tcBaseFrame-utils/src/main/java/com/tentcoo/common/mapper/JsonMapper.java" />
-        <option value="$PROJECT_DIR$/tcBaseFrame-utils/src/main/java/com/tentcoo/common/beanvalidator/BeanValidators.java" />
-        <option value="$PROJECT_DIR$/tcBaseFrame-data-provider/pom.xml" />
-        <option value="$PROJECT_DIR$/tcBaseFrame-webSys/src/main/java/com/tentcoo/websys/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/tcBaseFrame-webSys/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/tcBaseFrame-data-api/src/main/java/com/tentcoo/data/pojo/Employee.java" />
-        <option value="$PROJECT_DIR$/tcBaseFrame-data-provider/src/main/java/com/tentcoo/data/mapper/EmployeeMapper.java" />
         <option value="$PROJECT_DIR$/tcBaseFrame-data-provider/src/main/resources/mappings/modules/test/EmployeeMapper.xml" />
         <option value="$PROJECT_DIR$/tcBaseFrame-persistence/src/main/java/com/tentcoo/data/mybatis/Page.java" />
         <option value="$PROJECT_DIR$/tcBaseFrame-webSys/src/main/resources/templates/employee/list3.ftl" />
@@ -249,9 +271,16 @@
         <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/filter/JwtAuthenticationTokenFilter.java" />
         <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/config/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/pom.xml" />
         <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/config/JwtAuthenticationEntryPoint.java" />
         <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtUtil.java" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/Des.java" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/DesUtil.java" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/AesUtil.java" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtTest.java" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/Base64Utils.java" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSAUtils.java" />
+        <option value="$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSATester.java" />
       </list>
     </option>
   </component>
@@ -268,96 +297,7 @@
     </option>
   </component>
   <component name="MavenProjectNavigator">
-    <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tcBaseFrame-apiGateway Maven Webapp" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Dependencies" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tcBaseFrame-apiGateway Maven Webapp" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Dependencies" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="org.springframework.security:spring-security-config:4.2.4.RELEASE" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tcBaseFrame-apiGateway Maven Webapp" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Dependencies" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="org.springframework.security:spring-security-web:4.2.4.RELEASE" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tcBaseFrame-apiGateway Maven Webapp" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Dependencies" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="io.jsonwebtoken:jjwt:0.7.0" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="com.fasterxml.jackson.core:jackson-databind:2.8.10" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="tcBaseFrame-apiGateway Maven Webapp" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-    </treeState>
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1639" />
@@ -388,8 +328,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -604,6 +542,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -653,31 +593,11 @@
       <recent name="$PROJECT_DIR$/tcBaseFrame-webMgr/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGateWayApplication">
+  <component name="RunManager" selected="Application.RSATester">
     <configuration default="false" name="App4Provider" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tentcoo.data.App4Provider" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <module name="tcBaseFrame-data-provider" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="App4Consumer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tentcoo.consumer.App4Consumer" />
-      <module name="tcBaseFrame-consumer" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="App4Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.tentcoo.client.test.App4Client" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="tcBaseFrame-client-test" />
       <envs />
       <method />
     </configuration>
@@ -689,6 +609,34 @@
     </configuration>
     <configuration default="false" name="ApiGateWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tentcoo.gateway.ApiGateWayApplication" />
+      <module name="tcBaseFrame-apiGateway" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="JwtTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tentcoo.gateway.util.JwtTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="tcBaseFrame-apiGateway" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="RSATester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tentcoo.gateway.util.RSATester" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="tcBaseFrame-apiGateway" />
       <envs />
       <method />
@@ -917,18 +865,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.App4Provider" />
-      <item index="2" class="java.lang.String" itemvalue="Spring Boot.App4Consumer" />
-      <item index="3" class="java.lang.String" itemvalue="Application.App4Client" />
-      <item index="4" class="java.lang.String" itemvalue="Spring Boot.Application (1)" />
-      <item index="5" class="java.lang.String" itemvalue="Spring Boot.ApiGateWayApplication" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.Application (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Spring Boot.ApiGateWayApplication" />
+      <item index="4" class="java.lang.String" itemvalue="Application.JwtTest" />
+      <item index="5" class="java.lang.String" itemvalue="Application.RSATester" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Spring Boot.ApiGateWayApplication" />
-        <item index="1" class="java.lang.String" itemvalue="Spring Boot.Application (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Spring Boot.App4Provider" />
-        <item index="3" class="java.lang.String" itemvalue="Application.App4Client" />
-        <item index="4" class="java.lang.String" itemvalue="Spring Boot.App4Consumer" />
+        <item index="0" class="java.lang.String" itemvalue="Application.RSATester" />
+        <item index="1" class="java.lang.String" itemvalue="Application.JwtTest" />
+        <item index="2" class="java.lang.String" itemvalue="Spring Boot.ApiGateWayApplication" />
+        <item index="3" class="java.lang.String" itemvalue="Spring Boot.Application (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Spring Boot.App4Provider" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
@@ -956,7 +904,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36728394" sideWeight="0.5021916" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22917971" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37139916" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2952675" sideWeight="0.4978084" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2952675" sideWeight="0.4978084" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -965,7 +913,6 @@
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -976,6 +923,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -999,69 +947,14 @@
     <MESSAGE value="升级spring到4.3.12, spring boot到1.5.8" />
     <MESSAGE value="增加网关" />
     <MESSAGE value="支持跨域访问" />
-    <option name="LAST_COMMIT_MESSAGE" value="支持跨域访问" />
+    <MESSAGE value="增加jwt的认证.待于平台用户对接测试." />
+    <option name="LAST_COMMIT_MESSAGE" value="增加jwt的认证.待于平台用户对接测试." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-persistence/src/main/java/com/tentcoo/data/mybatis/proxy/PaginationMapperMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-persistence/src/main/java/com/tentcoo/data/mybatis/interceptor/PreparePaginationInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-persistence/src/main/java/com/tentcoo/data/mybatis/interceptor/PaginationInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-persistence/src/main/java/com/tentcoo/data/mybatis/proxy/PaginationMapperProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-utils/src/main/java/com/tentcoo/data/mybatis/entity/DataEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-utils/src/main/java/com/tentcoo/data/mybatis/entity/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-persistence/src/main/java/com/tentcoo/data/mybatis/service/CrudService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-persistence/src/main/java/com/tentcoo/data/mybatis/interceptor/BaseInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tcBaseFrame-utils/src/main/java/com/tentcoo/data/jpa/entity/IdEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1108,7 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1221,7 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1273,7 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
           <caret line="1" column="16" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1281,7 +1171,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#894#895#0" expanded="false" />
+            <element signature="e#957#958#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1289,7 +1183,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1459#1460#0" expanded="false" />
+            <element signature="e#1512#1513#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1298,54 +1196,15 @@
         <state relative-caret-position="132">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3116#3117#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/ApiGateWayApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/filter/AccessFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
+        <state relative-caret-position="468">
           <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1366,31 +1225,138 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/filter/JwtAuthenticationTokenFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
+        <state relative-caret-position="204">
           <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/filter/AccessFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/ApiGateWayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2416#2417#0" expanded="true" />
-            <element signature="e#2495#2496#0" expanded="true" />
+            <element signature="e#2402#2403#0" expanded="true" />
+            <element signature="e#2481#2482#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/Des.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/DesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/AesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/JwtTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1917#1918#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.11/commons-codec-1.11.jar!/org/apache/commons/codec/binary/Base64.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/Base64Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSAUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="78" column="48" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2048#2064#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcBaseFrame-apiGateway/src/main/java/com/tentcoo/gateway/util/RSATester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
