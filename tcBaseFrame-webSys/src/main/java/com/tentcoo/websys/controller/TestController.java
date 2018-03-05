@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -26,7 +25,6 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/websys")
 public class TestController extends BaseController{
 
-    //@Resource
     @Reference
     private EmployeeService employeeService;
 
@@ -53,8 +51,8 @@ public class TestController extends BaseController{
 
     @ApiOperation(value ="查询雇员列表信息", notes="")
     @ApiImplicitParams({
-        @ApiImplicitParam(name = "name", value = "姓名", required = false, dataType = "String"),
-        @ApiImplicitParam(name = "age", value = "年龄", required = false, dataType = "Integer")
+            @ApiImplicitParam(name = "name", value = "姓名", required = false, dataType = "String"),
+            @ApiImplicitParam(name = "age", value = "年龄", required = false, dataType = "Integer")
     })
     @GetMapping("list3")
     public String list3(HttpServletRequest request, HttpServletResponse response, ModelMap model) {

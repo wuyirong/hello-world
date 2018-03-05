@@ -5,7 +5,6 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +38,6 @@ public class ValidateCodeServlet extends HttpServlet {
 		String code = (String)request.getSession().getAttribute(VALIDATE_CODE);
 		return validateCode.toUpperCase().equals(code); 
 	}
-
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String validateCode = request.getParameter(VALIDATE_CODE); // AJAX验证，成功返回true

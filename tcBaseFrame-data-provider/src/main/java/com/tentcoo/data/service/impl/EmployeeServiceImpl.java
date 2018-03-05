@@ -82,19 +82,29 @@ public class EmployeeServiceImpl extends CrudService<EmployeeMapper, Employee> i
     public Page queryPage(EmployeeQueryObject qo) {
         List<Employee> list       = employeeMapper.queryForList(qo);
         long            totalCount = employeeMapper.queryForCount(qo);
-        return new Page(qo.getCurrentPage(), qo.getPageSize(),totalCount,list);
+        return new Page(qo.getCurrentPage(), qo.getRows(),totalCount,list);
     }
 
     @Override
     public PageResult queryPageResult(EmployeeQueryObject qo) {
         List<Employee> list       = employeeMapper.queryForList(qo);
         int            totalCount = employeeMapper.queryForCount(qo);
-        return new PageResult(qo.getCurrentPage(),qo.getPageSize(),list, totalCount);
+        return new PageResult(qo.getCurrentPage(),qo.getRows(),list, totalCount);
     }
 
     @Override
     public Employee getLoginInfoByUserName(String username) {
         return employeeMapper.getLoginInfoByUserName(username);
+    }
+
+    @Override
+    public List<Employee> getEmpByRoleId(String rid) {
+        return employeeMapper.getEmpByRoleId(rid);
+    }
+
+    @Override
+    public List<String> getPermissionByEmpId(String employeeId) {
+        return employeeMapper.getPermissionByEmpId(employeeId);
     }
 
 }

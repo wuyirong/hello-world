@@ -19,10 +19,13 @@
         select id,name,age from employee;
     </select>
     <select id="queryForList" resultType="com.tentcoo.data.pojo.Employee">
-        SELECT id,name,age FROM employee <include refid="baseWhere"/>  limit #{start} , #{pageSize};
+        SELECT id,name,age FROM employee
+        <include refid="baseWhere"/>
+        limit #{start} , #{rows};
     </select>
     <select id="queryForCount" resultType="java.lang.Integer">
-        SELECT count(id) FROM employee <include refid="baseWhere"/>
+        SELECT count(id) FROM employee
+        <include refid="baseWhere"/>
     </select>
     <select id="getLoginInfoByUserName" resultType="com.tentcoo.data.pojo.Employee">
         SELECT id,name,age,username,password FROM employee WHERE username = #{username}
@@ -46,6 +49,20 @@
         SELECT
         <include refid="employeeColumns"/>
         FROM employee a WHERE 1=1 order by id
+    </select>
+    <select id="getEmpByRoleId" resultType="com.tentcoo.data.pojo.Employee">
+        select e.id,e.name,e.age
+         from employee e
+          JOIN sys_role_employee re ON e.id = re.employee_id
+        WHERE re.role_id =#{rid}
+    </select>
+    <!--根据用户id查询出对应的权限-->
+    <select id="getPermissionByEmpId" resultType="java.lang.String">
+        SELECT menu.permission
+          FROM systemmenu menu
+          JOIN sys_role_menu rm ON rm.menu_id = menu.id
+          JOIN sys_role_employee re ON re.role_id = rm.role_id
+        WHERE re.employee_id = #{employeeId}
     </select>
 
     <insert id="insert" parameterType="com.tentcoo.data.pojo.Employee">

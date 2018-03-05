@@ -5,13 +5,14 @@ import java.util.List;
 
 /**
  * 页面内容
+ *
  * @author Administrator
  * @date 2018/1/27 0027
  */
 public class PageResult implements Serializable {
     private Integer currentPage;
     private Integer pageSize;
-    private List<?> list;
+    private List<?> rows;
     private int     totalCount;
     private int     totalPage;
     private int     prevPage;
@@ -20,7 +21,7 @@ public class PageResult implements Serializable {
     public PageResult(int currentPage, int pageSize, List<?> list, int totalCount) {
         this.currentPage = currentPage;
         this.pageSize = pageSize;
-        this.list = list;
+        this.rows = list;
         this.totalCount = totalCount;
 
         totalPage = totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
@@ -31,59 +32,36 @@ public class PageResult implements Serializable {
     public PageResult() {
     }
 
-    public Integer getCurrentPage() {
-        return currentPage;
+    public PageResult(int totalCount, List<?> rows) {
+        this.totalCount = totalCount;
+        this.rows = rows;
     }
 
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public Integer getCurrentPage() {
+        return currentPage;
     }
 
     public Integer getPageSize() {
         return pageSize;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public List<?> getList() {
-        return list;
-    }
-
-    public void setList(List<?> list) {
-        this.list = list;
+    public List<?> getRows() {
+        return rows;
     }
 
     public int getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
     public int getTotalPage() {
         return totalPage;
-    }
-
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
     }
 
     public int getPrevPage() {
         return prevPage;
     }
 
-    public void setPrevPage(int prevPage) {
-        this.prevPage = prevPage;
-    }
-
     public int getNextPage() {
         return nextPage;
-    }
-
-    public void setNextPage(int nextPage) {
-        this.nextPage = nextPage;
     }
 }
