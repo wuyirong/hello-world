@@ -7,8 +7,10 @@ import java.io.Serializable;
  * @date 2018/1/27 0027
  */
 public class QueryObject implements Serializable {
+    //当前页
     private Integer currentPage = 1;
-    private Integer pageSize    = 2;
+    //分页页数
+    private Integer rows        = 2;
 
     public Integer getCurrentPage() {
         return currentPage;
@@ -18,15 +20,15 @@ public class QueryObject implements Serializable {
         this.currentPage = currentPage;
     }
 
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getRows() {
+        return rows;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setRows(Integer rows) {
+        this.rows = rows;
     }
 
     public int getStart() {
-        return (this.currentPage - 1) * this.pageSize;
+        return (this.currentPage - 1) * this.rows;
     }
 }

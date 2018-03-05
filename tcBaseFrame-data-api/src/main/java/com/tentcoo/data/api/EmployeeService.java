@@ -44,4 +44,17 @@ public interface EmployeeService {
 
     Employee getLoginInfoByUserName(String username);
 
+    /**
+     * 根据角色id获取对应用户
+     * @param rid
+     * @return
+     */
+    List<Employee> getEmpByRoleId(String rid);
+
+    /**
+     * 根据用户id获取对应的权限
+     * @param employeeId
+     * @return
+     */
+    List<String> getPermissionByEmpId(String employeeId);
 }

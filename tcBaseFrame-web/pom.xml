@@ -12,6 +12,13 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+
+        <!--util-->
+        <dependency>
+            <groupId>com.tentcoo-tcBaseFrame</groupId>
+            <artifactId>tcBaseFrame-utils</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!--引入data-api-->
         <dependency>
             <groupId>com.tentcoo-tcBaseFrame</groupId>

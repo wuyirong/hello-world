@@ -95,10 +95,10 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
         //判断是否第一次登录失败
         Integer failureNum = (Integer) UserUtil.getCache(info.getUsername());
         if (failureNum == null) {
-            UserUtil.putCache(info.getUsername(),1);
+            UserUtil.putCache(info.getUsername(), 1);
         } else {
             UserUtil.removeCache(info.getUsername());
-            UserUtil.putCache(info.getUsername(),failureNum + 1 );
+            UserUtil.putCache(info.getUsername(), failureNum + 1);
         }
 
         Map<String, Object> jsonMap = new HashMap<>();
@@ -107,9 +107,9 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
         if (IncorrectCredentialsException.class.getName().equals(className) || UnknownAccountException.class.getName().equals(className)) {
             message = "用户或密码错误, 请重试!!!";
             jsonMap.put("msg", "用户或密码错误, 请重试!!!");
-        } else if (e.getMessage() != null && StringUtils.startsWith(e.getMessage(), "msg:")) {
+        } else if (e.getMessage() != null && StringUtils.startsWith(e.getMessage(), "验证码错误")) {
             message = StringUtils.replace(e.getMessage(), "msg:", "");
-            jsonMap.put("msg", "其它错误");
+            jsonMap.put("msg", e.getMessage());
         } else {
             message = "系统出现点问题，请稍后再试！";
             e.printStackTrace(); // 输出到控制台

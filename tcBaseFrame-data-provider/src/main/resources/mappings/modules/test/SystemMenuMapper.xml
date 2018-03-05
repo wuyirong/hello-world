@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tentcoo.data.mapper.SystemMenuMapper">
+    <resultMap id="BaseResultMap" type="com.tentcoo.data.pojo.SystemMenu">
+        <id column="id" property="id"/>
+        <result column="text" property="text"/>
+        <result column="sort" property="sort"/>
+        <result column="href" property="href"/>
+        <result column="target" property="target"/>
+        <result column="icon" property="icon"/>
+        <result column="is_show" property="isShow"/>
+        <result column="permission" property="permission"/>
+        <result column="create_date" property="createDate"/>
+        <result column="update_date" property="updateDate"/>
+        <result column="remarks" property="remarks"/>
+        <result column="del_flag" property="delFlag"/>
+        <result property="parent.id" column="parent_id"/>
+        <!--关联创建人-->
+        <association property="createBy" javaType="com.tentcoo.data.pojo.Employee" columnPrefix="createBy_">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+        </association>
+        <!--关联修改人-->
+        <association property="updateBy" javaType="com.tentcoo.data.pojo.Employee" columnPrefix="updateBy_">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+        </association>
+        <!--关联父级菜单-->
+        <association property="parent" javaType="com.tentcoo.data.pojo.SystemMenu" select="selectParentMenu" column="parent_id"/>
+        <!--查询children 子菜单-->
+        <collection column="id" ofType="com.tentcoo.data.pojo.SystemMenu"
+                    property="children" select="getChildrenMenu"/>
+    </resultMap>
+    <!--getOne-->
+    <resultMap id="getOneMenu" type="com.tentcoo.data.pojo.SystemMenu">
+        <id column="id" property="id"/>
+        <result column="text" property="text"/>
+        <result column="sort" property="sort"/>
+        <result column="href" property="href"/>
+        <result column="target" property="target"/>
+        <result column="icon" property="icon"/>
+        <result column="is_show" property="isShow"/>
+        <result column="permission" property="permission"/>
+        <result column="remarks" property="remarks"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="create_date" property="createDate"/>
+        <!--创建人-->
+        <association property="createBy" javaType="com.tentcoo.data.pojo.Employee" columnPrefix="e_">
+            <id property="id" column="id"/>
+        </association>
+        <!--关联父级菜单-->
+        <association property="parent" javaType="com.tentcoo.data.pojo.SystemMenu" select="selectParentMenu" column="parent_id"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, parent_id, text, sort, href, target, icon, is_show, permission, create_by, create_date,
+        update_by, update_date, remarks, del_flag
+  </sql>
+    <!--查询根菜单-->
+    <select id="getRootMenu" resultMap="BaseResultMap">
+        select
+        <include refid="base_colum"/>
+        from
+        <include refid="base_from"/>
+        <include refid="where_cause"/>
+    </select>
+
+    <!-- 查询子菜单-->
+    <select id="getChildrenMenu" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from systemmenu where parent_id = #{id}
+    </select>
+    <!--查询父菜单-->
+    <select id="selectParentMenu" resultType="com.tentcoo.data.pojo.SystemMenu">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM systemmenu
+        WHERE id=#{pId}
+        order by 'sort'
+    </select>
+    <!--共同列-->
+    <sql id="base_colum">
+        child.id , child.text ,child.href ,child.target, child.parent_id ,child.icon,
+        child.is_show,child.permission,child.create_date,child.sort,
+        child.update_date,child.remarks,child.del_flag,
+        parent.id p_id ,parent.text p_text,
+        createBy.username createBy_username,createBy.id createBy_id,
+        updateBy.username updateBy_username,updateBy.id updateBy_id
+    </sql>
+    <!--来自哪张表-->
+    <sql id="base_from">
+        `systemmenu` child left JOIN systemmenu parent ON child.parent_id = parent.id
+                                JOIN employee createBy ON createBy.id = child.create_by
+                                JOIN employee updateBy ON updateBy.id = child.update_by
+    </sql>
+
+    <!--删除菜单-->
+    <delete id="deleteByPrimaryKey">
+        delete from systemmenu
+        where id = #{id}
+    </delete>
+    <!--插入菜单-->
+    <insert id="insert">
+        insert into systemmenu
+        (id,text,href,target,parent_id,icon,is_show,permission,create_by,create_date,update_by,update_date,remarks,del_flag,sort)
+        values
+        (#{id},#{text}, #{href},#{target}, #{parent.id},
+        #{icon},#{isShow},#{permission},#{createBy.id},#{createDate},
+        #{updateBy.id},#{updateDate},#{remarks},#{delFlag},#{sort})
+    </insert>
+    <!--更新菜单-->
+    <update id="updateByPrimaryKey">
+        update systemmenu
+        set
+        id = #{id},
+        icon =#{icon},
+        text = #{text},
+        href = #{href},
+        create_by= #{createBy.id},
+        create_date=#{createDate},
+        target = #{target},
+        parent_id = #{parent.id},
+        is_show = #{isShow},
+        permission = #{permission},
+        update_by = #{updateBy.id},
+        update_date = #{updateDate},
+        remarks = #{remarks},
+        del_flag = #{delFlag},
+        sort=#{sort}
+        where id = #{id}
+    </update>
+    <update id="changeState">
+        update systemmenu set del_flag = del_flag ^ 1  where id=#{id};
+    </update>
+    <!--查询某个菜单-->
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select
+        <include refid="base_colum"/>
+        from
+        <include refid="base_from"/>
+        where child.parent_id = #{id}
+    </select>
+
+    <!--查询菜单-->
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from systemmenu
+        where parent_id = '0'
+    </select>
+
+    <sql id="where_cause">
+        <where>
+            <choose>
+                <when test="parentId == null or parentId==''">
+                    and child.parent_id = '0'
+                </when>
+                <otherwise>
+                    and child.parent_id =#{parentId}
+                </otherwise>
+            </choose>
+        </where>
+        order by child.sort
+    </sql>
+
+    <!--查询总数-->
+    <select id="queryForTotal" resultType="java.lang.Integer">
+        select count(child.id) from systemmenu child
+        <include refid="where_cause"/>
+    </select>
+
+    <!--查询全部数据list-->
+    <select id="queryForRows" resultMap="BaseResultMap">
+        select
+        <include refid="base_colum"/>
+        from
+        <include refid="base_from"/>
+        <include refid="where_cause"/>
+        limit #{start},#{rows}
+    </select>
+    <select id="get" resultMap="getOneMenu">
+        SELECT
+        s.id, s.parent_id, s.text, s.sort, s.href, s.target, s.icon, s.is_show, s.permission, s.create_by, s.create_date,
+        update_by, update_date, remarks, del_flag,e.id e_id
+        FROM systemmenu s JOIN employee e ON s.create_by = e.id
+        WHERE s.id=#{id}
+    </select>
+    <select id="getTreeResult" resultType="java.util.Map">
+        SELECT
+          child.id          AS id,
+          child.text        AS name,
+          child.href        AS action,
+          child.parent_id   AS pId
+        FROM systemmenu child
+          LEFT JOIN systemmenu parent ON child.parent_id = parent.id
+    </select>
+</mapper>

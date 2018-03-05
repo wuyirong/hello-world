@@ -1,9 +1,13 @@
 package com.tentcoo.security.shiro;
 
+import com.tentcoo.common.servlet.ValidateCodeServlet;
 import com.tentcoo.data.api.EmployeeService;
+import com.tentcoo.data.api.RoleService;
 import com.tentcoo.data.pojo.Employee;
+import com.tentcoo.data.pojo.Role;
 import com.tentcoo.log.util.MyLog;
 import com.tentcoo.security.utils.UserUtil;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -11,12 +15,15 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.Permission;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,16 +34,37 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
     private MyLog logger = MyLog.getLog(SystemAuthorizingRealm.class);
     @Resource
-    private EmployeeService    employeeService;
+    private EmployeeService employeeService;
+    @Resource
+    private RoleService     roleService;
     public static final String HASH_ALGORITHM   = "SHA-1";
     public static final int    SALT_SIZE        = 8;
     public static final int    HASH_INTERATIONS = 1024;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        Principal principal = (Principal) getAvailablePrincipal(principals);
-        //todo
-        return null;
+        // Principal               principal = (Principal) getAvailablePrincipal(principals);
+        SimpleAuthorizationInfo info    = new SimpleAuthorizationInfo();
+        Employee                current = (Employee) SecurityUtils.getSubject().getPrincipal();
+        //用户拥有的角色
+        List<Role> roleList = roleService.getRoleByEmpId(current.getId());
+        //用户拥有的权限
+        List<String>      permissionList = employeeService.getPermissionByEmpId(current.getId());
+        ArrayList<String> roles          = new ArrayList<>();
+        ArrayList<String> permissions          = new ArrayList<>();
+        for (Role role : roleList) {
+            roles.add(role.getEnName());
+        }
+        for (String permission : permissionList) {
+            if (permission != null && !permission.equals("")) {
+                permissions.add(permission);
+            }
+        }
+        //添加用户对应的角色
+        info.addRoles(roles);
+        //添加用户拥有的权限
+        info.addStringPermissions(permissions);
+        return info;
     }
 
     /**
@@ -48,9 +76,18 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
-        UsernamePasswordToken token     = (UsernamePasswordToken) authcToken;
-        String   username = (String) token.getPrincipal();
-        Employee employee = employeeService.getLoginInfoByUserName(username);
+        UsernamePasswordToken token    = (UsernamePasswordToken) authcToken;
+        String                username = (String) token.getPrincipal();
+        // 校验登录验证码
+        Integer failureNum = (Integer) UserUtil.getCache(username);
+        if (failureNum != null && failureNum >= 3){
+            Session session = UserUtil.getSession();
+            String  code    = (String)session.getAttribute(ValidateCodeServlet.VALIDATE_CODE);
+            if (token.getCaptcha() == null || !token.getCaptcha().toUpperCase().equals(code)){
+                throw new AuthenticationException("验证码错误, 请重试.");
+            }
+        }
+        Employee              employee = employeeService.getLoginInfoByUserName(username);
         if (employee == null) {
             return null;
         }
@@ -144,7 +181,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
         }
 
 //		@JsonIgnore
-//		public Map<String, Object> getCacheMap() {
+//		public Map<String, Object> getCacheMaAp() {
 //			if (cacheMap==null){
 //				cacheMap = new HashMap<String, Object>();
 //			}

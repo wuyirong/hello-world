@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tentcoo.data.mapper.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.tentcoo.data.pojo.Role">
+        <id column="id" property="id"/>
+        <result column="office_id" property="officeId"/>
+        <result column="name" property="name"/>
+        <result column="enName" property="enName"/>
+        <result column="role_type" property="roleType"/>
+        <result column="data_scope" property="dataScope"/>
+        <result column="is_sys" property="isSys"/>
+        <result column="useable" property="useable"/>
+        <result column="create_date" property="createDate"/>
+        <result column="update_date" property="updateDate"/>
+        <result column="remarks" property="remarks"/>
+        <result column="del_flag" property="delFlag"/>
+        <!--关联创建人-->
+        <association property="createBy" javaType="com.tentcoo.data.pojo.Employee" columnPrefix="createBy_">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+        </association>
+        <!--关联修改人-->
+        <association property="updateBy" javaType="com.tentcoo.data.pojo.Employee" columnPrefix="updateBy_">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+        </association>
+        <!--权限菜单-->
+        <collection property="menuList" ofType="com.tentcoo.data.pojo.SystemMenu">
+            <id property="id" column="menuList.id"/>
+        </collection>
+    </resultMap>
+    <!--基本的列-->
+    <sql id="Base_Column_List">
+    id, office_id, name, enName, role_type, data_scope, is_sys, useable, create_by, create_date, 
+    update_by, update_date, remarks, del_flag
+  </sql>
+    <!--关联表需要的列-->
+    <sql id="base_column">
+        r.id, r.office_id, r.name, r.enName, r.role_type, r.data_scope, r.is_sys, r.useable, r.create_date,
+        update_date, r.remarks, r.del_flag,
+        createBy.id createBy_id,createBy.username createBy_username,
+        updateBy.id updateBy_id,updateBy.username updateBy_usernamem,
+        rm.menu_id AS "menuList.id"
+    </sql>
+    <!--查询单个角色-->
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select
+        <include refid="base_column"/>
+        from
+        <include refid="base_from"/>
+        where r.id = #{id}
+    </select>
+    <!--查询全部角色-->
+    <select id="listAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="base_column"/>
+        FROM
+        <include refid="base_from"/>
+        <include refid="base_where"/>
+    </select>
+    <!--根据用户id获取角色-->
+    <select id="getRoleByEmpId" resultType="com.tentcoo.data.pojo.Role">
+        SELECT
+          r.id,
+          r.office_id,
+          r.name,
+          r.enName,
+          r.role_type,
+          r.data_scope,
+          r.is_sys,
+          r.useable,
+          r.create_date,
+          update_date,
+          r.remarks,
+          r.del_flag
+        FROM sys_role r
+        WHERE r.id = (
+          SELECT re.role_id
+          FROM sys_role_employee re
+          WHERE re.employee_id = #{employeeId}
+        ) AND r.del_flag = #{roleState}
+    </select>
+    <!--删除角色-->
+    <delete id="deleteByPrimaryKey">
+    delete from sys_role
+    where id = #{id}
+  </delete>
+    <!--删除与菜单关系-->
+    <delete id="deleteMenuRelation">
+        DELETE FROM sys_role_menu WHERE role_id = #{id}
+    </delete>
+    <!--删除角色与员工的关系-->
+    <delete id="deleteEmpRelation">
+        DELETE FROM sys_role_employee WHERE role_id = #{rid}
+    </delete>
+    <!--删除单个员工与角色关系-->
+    <delete id="removeRoleAndEmpRelation">
+        DELETE FROM sys_role_employee WHERE role_id = #{rid} and employee_id  = #{empId}
+    </delete>
+    <!--新增角色-->
+    <insert id="insert" parameterType="com.tentcoo.data.pojo.Role">
+    insert into sys_role (id, office_id, name, 
+      enName, role_type, data_scope, 
+      is_sys, useable, create_by, 
+      create_date, update_by, update_date, 
+      remarks, del_flag)
+    values (#{id}, #{officeId}, #{name}, 
+      #{enName}, #{roleType}, #{dataScope}, 
+      #{isSys}, #{useable}, #{createBy.id},
+      #{createDate}, #{updateBy.id}, #{updateDate},
+      #{remarks}, #{delFlag})
+  </insert>
+    <!--保存与菜单关系-->
+    <insert id="saveMenuRelation">
+        insert into sys_role_menu (role_id, menu_id) values
+        <foreach collection="menuIdList" separator="," item="item">
+            (#{rid}, #{item})
+        </foreach>
+    </insert>
+    <insert id="saveEmployeeRelation">
+        insert into sys_role_employee (role_id, employee_id) values
+        <foreach collection="empIds" item="item" separator=",">
+            (#{rid},#{item})
+        </foreach>
+    </insert>
+    <!--更新角色-->
+    <update id="updateByPrimaryKey" parameterType="com.tentcoo.data.pojo.Role">
+    update sys_role
+    set office_id = #{officeId},
+      name = #{name},
+      enName = #{enName},
+      role_type = #{roleType},
+      data_scope = #{dataScope},
+      is_sys = #{isSys},
+      useable = #{useable},
+      create_by = #{createBy.id},
+      create_date = #{createDate},
+      update_by = #{updateBy.id},
+      update_date = #{updateDate},
+      remarks = #{remarks},
+      del_flag = #{delFlag}
+    where id = #{id}
+  </update>
+    <update id="changeRoleState">
+        update sys_role set del_flag = del_flag^1 where id=#{id};
+    </update>
+    <!--保存员工与角色关系-->
+
+
+    <!--来自那张表-->
+    <sql id="base_from">
+      sys_role r
+      JOIN employee createBy ON createBy.id = r.create_by
+      JOIN employee updateBy ON updateBy.id = r.update_by
+      LEFT JOIN sys_role_menu rm ON rm.role_id = r.id
+  </sql>
+    <sql id="base_where">
+        <where>
+            r.del_flag = '0'
+        </where>
+    </sql>
+</mapper>

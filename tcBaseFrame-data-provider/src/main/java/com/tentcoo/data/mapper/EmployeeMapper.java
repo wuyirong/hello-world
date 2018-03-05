@@ -31,4 +31,13 @@ public interface EmployeeMapper extends CrudDao<Employee> {
     int queryForCount(EmployeeQueryObject qo);
 
     Employee getLoginInfoByUserName(String username);
+
+    List<Employee> getEmpByRoleId(String rid);
+
+    /**
+     * 根据用户id获得对应的权限
+     * @param employeeId
+     * @return
+     */
+    List<String> getPermissionByEmpId(String employeeId);
 }

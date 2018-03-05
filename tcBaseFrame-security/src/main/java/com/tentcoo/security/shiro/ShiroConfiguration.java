@@ -106,7 +106,7 @@ public class ShiroConfiguration {
         Map<String, String> filterChainDefinitionManager = new LinkedHashMap<String, String>();
         filterChainDefinitionManager.put("/static/**", "anon");//可匿名访问
         filterChainDefinitionManager.put("/login.html", "anon");//可匿名访问
-        filterChainDefinitionManager.put("/randomCode", "anon");//可匿名访问
+        filterChainDefinitionManager.put("/servlet/validateCodeServlet", "anon");//可匿名访问验证码localhost:8091/servlet/validateCodeServlet
         filterChainDefinitionManager.put("/logout", "logout");//登出方法
         filterChainDefinitionManager.put("/user/**", "authc,roles[ROLE_USER]");
         filterChainDefinitionManager.put("/events/**", "authc,roles[ROLE_ADMIN]");

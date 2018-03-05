@@ -1,5 +1,6 @@
 package com.tentcoo.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.tentcoo.data.api.EmployeeService;
 import com.tentcoo.data.page.EmployeeQueryObject;
 import com.tentcoo.data.page.PageResult;
@@ -10,8 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.Resource;
-
 /**
  * Created by rover on 2018/1/24.
  */
@@ -19,7 +18,7 @@ import javax.annotation.Resource;
 @RequestMapping("/view")
 public class TestController {
 
-    @Resource
+    @Reference
     private EmployeeService employeeService;
 
     @RequestMapping("/greeting")

@@ -13,5 +13,4 @@
                    ref="employeeService" protocol="dubbo" timeout="100000" retries="0"/>
 
     <dubbo:annotation package="com.tentcoo.data.service.impl"/>
-
 </beans>
