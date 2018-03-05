@@ -2,13 +2,15 @@ package com.tentcoo.data.pojo;
 
 import com.tentcoo.data.mybatis.entity.DataEntity;
 
+import java.io.Serializable;
+
 /**
  * 测试domain
  *
  * @author Administrator
  * @date 2018/1/26 0026
  */
-public class Employee extends DataEntity<Employee> {
+public class Employee extends DataEntity<Employee> implements Serializable {
     private String name;
     private int    age;
     private String username;
