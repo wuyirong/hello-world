@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-apiGateway" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-client-test" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-consumer" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-data-api" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-data-provider" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-log" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-message" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-persistence" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-security" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-utils" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-web" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/tcBaseFrame-webSys" vcs="svn" />
   </component>
 </project>

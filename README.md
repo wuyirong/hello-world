@@ -40,3 +40,13 @@ INSERT INTO `t_security` VALUES ('0eca8f5373ca4866aec2f8e9d9367104', '14318527b1
 8、启动tcBaseFrame-consumer项目下的App4Consumer注册服务消费者；
 9、启动tcBaseFrame-client-test项目下的App4Client类文件的Main方法;
 10、整个项目即可完整运行。
+
+
+---------
+集成基于kafka(依赖zookeeper)的消息队列
+1:下载:http://mirrors.shu.edu.cn/apache/kafka/1.0.0/kafka_2.12-1.0.0.tgz  官网(http://kafka.apache.org/downloads)
+2:解压在非中文目录.
+3:启动zookeeper: /zookeeper-3.4.8/bin/zkServer.sh start (可以不用kafka集成的)
+4:启动kafka: ./bin/kafka-server-start.sh ./config/server.properties
+5:运行测试KafkaMessageApplication. 观察控制台的输出.
+6:查看topic列表: ./bin/kafka-topics.sh --list --zookeeper localhost:2181

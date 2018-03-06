@@ -279,5 +279,6 @@
 		<module>tcBaseFrame-web</module>
 		<module>tcBaseFrame-webSys</module>
 		<module>tcBaseFrame-apiGateway</module>
+		<module>tcBaseFrame-message</module>
 	</modules>
 </project>

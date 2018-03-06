@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-data-api/tcBaseFrame-data-api.iml" filepath="$PROJECT_DIR$/tcBaseFrame-data-api/tcBaseFrame-data-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-data-provider/tcBaseFrame-data-provider.iml" filepath="$PROJECT_DIR$/tcBaseFrame-data-provider/tcBaseFrame-data-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-log/tcBaseFrame-log.iml" filepath="$PROJECT_DIR$/tcBaseFrame-log/tcBaseFrame-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-message/tcBaseFrame-message.iml" filepath="$PROJECT_DIR$/tcBaseFrame-message/tcBaseFrame-message.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-parent.iml" filepath="$PROJECT_DIR$/tcBaseFrame-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-persistence/tcBaseFrame-persistence.iml" filepath="$PROJECT_DIR$/tcBaseFrame-persistence/tcBaseFrame-persistence.iml" />
       <module fileurl="file://$PROJECT_DIR$/tcBaseFrame-security/tcBaseFrame-security.iml" filepath="$PROJECT_DIR$/tcBaseFrame-security/tcBaseFrame-security.iml" />
